@@ -15,6 +15,7 @@ namespace Vistas
         public Principal()
         {
             InitializeComponent();
+            this.FormClosed += (s, e) => Application.Exit();
         }
 
         private void btnSistema_Click(object sender, EventArgs e)
