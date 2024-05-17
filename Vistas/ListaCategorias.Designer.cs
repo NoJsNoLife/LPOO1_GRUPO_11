@@ -85,12 +85,15 @@
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(748, 615);
+            ControlBox = false;
             Controls.Add(btnAltaCategorias);
             Controls.Add(lblCategorias);
             Controls.Add(btnVolverSistema);
             Controls.Add(dgwCategorias);
             Margin = new Padding(4, 5, 4, 5);
+            MaximizeBox = false;
             MaximumSize = new Size(770, 671);
+            MinimizeBox = false;
             MinimumSize = new Size(770, 671);
             Name = "ListaCategorias";
             Text = "ListaCategorias";

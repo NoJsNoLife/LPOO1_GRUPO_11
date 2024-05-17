@@ -333,6 +333,7 @@
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1143, 750);
+            ControlBox = false;
             Controls.Add(btnAgregar);
             Controls.Add(numericPeso);
             Controls.Add(label11);

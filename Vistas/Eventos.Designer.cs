@@ -60,6 +60,7 @@
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 624);
+            ControlBox = false;
             Controls.Add(label1);
             Controls.Add(btnVolverSistema);
             MaximumSize = new Size(822, 680);

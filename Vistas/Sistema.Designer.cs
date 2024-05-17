@@ -84,6 +84,7 @@
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(463, 475);
+            ControlBox = false;
             Controls.Add(btnListaCategorias);
             Controls.Add(btnVolverSistema);
             Controls.Add(btnDisciplinas);
@@ -93,6 +94,7 @@
             MinimumSize = new Size(485, 531);
             Name = "Sistema";
             Text = "Sistema";
+            Load += Sistema_Load;
             ResumeLayout(false);
             PerformLayout();
         }

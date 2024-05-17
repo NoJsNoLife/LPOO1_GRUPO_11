@@ -23,6 +23,8 @@ namespace Vistas
         private void btnVolverSistema_Click(object sender, EventArgs e)
         {
             this.Hide();
+            sistemaReferencia.Close();
+            this.sistemaReferencia = new Sistema(this);
             sistemaReferencia.Show();
         }
 

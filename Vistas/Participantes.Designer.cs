@@ -42,9 +42,10 @@
             // 
             btnVolverSistema.BackgroundImage = Properties.Resources.volver;
             btnVolverSistema.BackgroundImageLayout = ImageLayout.Stretch;
-            btnVolverSistema.Location = new Point(740, 12);
+            btnVolverSistema.Location = new Point(1057, 20);
+            btnVolverSistema.Margin = new Padding(4, 5, 4, 5);
             btnVolverSistema.Name = "btnVolverSistema";
-            btnVolverSistema.Size = new Size(48, 48);
+            btnVolverSistema.Size = new Size(69, 80);
             btnVolverSistema.TabIndex = 4;
             btnVolverSistema.UseVisualStyleBackColor = true;
             btnVolverSistema.Click += btnVolverSistema_Click;
@@ -53,9 +54,10 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 20F);
-            label1.Location = new Point(12, 23);
+            label1.Location = new Point(17, 38);
+            label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(168, 37);
+            label1.Size = new Size(249, 54);
             label1.TabIndex = 5;
             label1.Text = "Participantes";
             // 
@@ -66,9 +68,11 @@
             dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(12, 77);
+            dataGridView1.Location = new Point(17, 128);
+            dataGridView1.Margin = new Padding(4, 5, 4, 5);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(776, 322);
+            dataGridView1.RowHeadersWidth = 62;
+            dataGridView1.Size = new Size(1109, 537);
             dataGridView1.TabIndex = 6;
             // 
             // atletaBindingSource
@@ -79,9 +83,10 @@
             // 
             btnAltaParticipantes.BackColor = SystemColors.ActiveCaption;
             btnAltaParticipantes.Font = new Font("Segoe UI", 12F);
-            btnAltaParticipantes.Location = new Point(558, 12);
+            btnAltaParticipantes.Location = new Point(797, 20);
+            btnAltaParticipantes.Margin = new Padding(4, 5, 4, 5);
             btnAltaParticipantes.Name = "btnAltaParticipantes";
-            btnAltaParticipantes.Size = new Size(176, 48);
+            btnAltaParticipantes.Size = new Size(251, 80);
             btnAltaParticipantes.TabIndex = 7;
             btnAltaParticipantes.Text = "Alta de Participantes";
             btnAltaParticipantes.UseVisualStyleBackColor = false;
@@ -89,15 +94,17 @@
             // 
             // Participantes
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1134, 722);
+            ControlBox = false;
             Controls.Add(btnAltaParticipantes);
             Controls.Add(dataGridView1);
             Controls.Add(label1);
             Controls.Add(btnVolverSistema);
-            MaximumSize = new Size(816, 489);
-            MinimumSize = new Size(816, 489);
+            Margin = new Padding(4, 5, 4, 5);
+            MaximumSize = new Size(1156, 778);
+            MinimumSize = new Size(1156, 778);
             Name = "Participantes";
             Text = "Participantes";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();

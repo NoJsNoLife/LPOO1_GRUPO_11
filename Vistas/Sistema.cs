@@ -38,5 +38,10 @@ namespace Vistas
             Form listaDisciplinas = new ListaDisciplinas(this);
             listaDisciplinas.Show();
         }
+
+        private void Sistema_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

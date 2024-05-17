@@ -40,5 +40,10 @@ namespace Vistas
             Form altaCategoria = new AltaCategoria(this);
             altaCategoria.Show();
         }
+
+        private void lblCategorias_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -82,9 +82,9 @@
             // 
             // ListaDisciplinas
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleMode = AutoScaleMode.None;
             ClientSize = new Size(800, 624);
+            ControlBox = false;
             Controls.Add(btnAltaDisciplinas);
             Controls.Add(lblDisciplinas);
             Controls.Add(btnVolverSistema);
