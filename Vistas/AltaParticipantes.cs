@@ -47,8 +47,6 @@ namespace Vistas
         private void btnVolverSistema_Click(object sender, EventArgs e)
         {
             this.Hide();
-            participanteReferencia.Close();
-            participanteReferencia = new Participantes(this);
             participanteReferencia.Show();
         }
     }
