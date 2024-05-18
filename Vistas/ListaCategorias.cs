@@ -45,5 +45,10 @@ namespace Vistas
         {
 
         }
+
+        private void ListaCategorias_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

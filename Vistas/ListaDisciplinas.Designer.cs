@@ -53,7 +53,7 @@
             lblDisciplinas.Location = new Point(50, 58);
             lblDisciplinas.Margin = new Padding(4, 0, 4, 0);
             lblDisciplinas.Name = "lblDisciplinas";
-            lblDisciplinas.Size = new Size(210, 54);
+            lblDisciplinas.Size = new Size(143, 37);
             lblDisciplinas.TabIndex = 10;
             lblDisciplinas.Text = "Disciplinas";
             // 
@@ -83,7 +83,7 @@
             // ListaDisciplinas
             // 
             AutoScaleMode = AutoScaleMode.None;
-            ClientSize = new Size(800, 624);
+            ClientSize = new Size(806, 641);
             ControlBox = false;
             Controls.Add(btnAltaDisciplinas);
             Controls.Add(lblDisciplinas);
@@ -92,7 +92,9 @@
             MaximumSize = new Size(822, 680);
             MinimumSize = new Size(822, 680);
             Name = "ListaDisciplinas";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "ListaDisciplinas";
+            Load += ListaDisciplinas_Load;
             ((System.ComponentModel.ISupportInitialize)dgwDisciplinas).EndInit();
             ResumeLayout(false);
             PerformLayout();

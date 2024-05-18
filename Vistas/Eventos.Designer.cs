@@ -36,10 +36,9 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 20F);
-            label1.Location = new Point(13, 40);
-            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Location = new Point(9, 24);
             label1.Name = "label1";
-            label1.Size = new Size(429, 54);
+            label1.Size = new Size(290, 37);
             label1.TabIndex = 7;
             label1.Text = "Eventos (En Desarrollo)";
             // 
@@ -47,25 +46,26 @@
             // 
             btnVolverSistema.BackgroundImage = Properties.Resources.volver;
             btnVolverSistema.BackgroundImageLayout = ImageLayout.Stretch;
-            btnVolverSistema.Location = new Point(718, 14);
-            btnVolverSistema.Margin = new Padding(4, 5, 4, 5);
+            btnVolverSistema.Location = new Point(503, 8);
             btnVolverSistema.Name = "btnVolverSistema";
-            btnVolverSistema.Size = new Size(69, 80);
+            btnVolverSistema.Size = new Size(48, 48);
             btnVolverSistema.TabIndex = 6;
             btnVolverSistema.UseVisualStyleBackColor = true;
             btnVolverSistema.Click += btnVolverSistema_Click;
             // 
             // Eventos
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 624);
+            ClientSize = new Size(564, 385);
             ControlBox = false;
             Controls.Add(label1);
             Controls.Add(btnVolverSistema);
-            MaximumSize = new Size(822, 680);
-            MinimumSize = new Size(822, 680);
+            Margin = new Padding(2, 2, 2, 2);
+            MaximumSize = new Size(580, 424);
+            MinimumSize = new Size(580, 424);
             Name = "Eventos";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Eventos";
             ResumeLayout(false);
             PerformLayout();

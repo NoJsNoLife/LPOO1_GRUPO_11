@@ -39,5 +39,10 @@ namespace Vistas
             Form altaDisciplina = new AltaDisciplina(this);
             altaDisciplina.Show();
         }
+
+        private void ListaDisciplinas_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

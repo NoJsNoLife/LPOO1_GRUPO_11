@@ -45,5 +45,10 @@ namespace Vistas
             Form eventos = new Eventos(this);
             eventos.Show();
         }
+
+        private void Principal_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

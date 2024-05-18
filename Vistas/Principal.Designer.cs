@@ -37,23 +37,22 @@
             // 
             // label1
             // 
-            label1.AutoSize = true;
+            label1.Dock = DockStyle.Top;
             label1.Font = new Font("Segoe UI", 20F);
-            label1.Location = new Point(211, 112);
-            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Location = new Point(0, 0);
             label1.Name = "label1";
-            label1.Size = new Size(816, 54);
+            label1.Size = new Size(798, 37);
             label1.TabIndex = 0;
             label1.Text = "Bienvenido al Sistema de control de Eventos!";
+            label1.TextAlign = ContentAlignment.TopCenter;
             // 
             // btnSistema
             // 
             btnSistema.AutoSize = true;
             btnSistema.Font = new Font("Segoe UI", 18F);
-            btnSistema.Location = new Point(773, 212);
-            btnSistema.Margin = new Padding(4, 5, 4, 5);
+            btnSistema.Location = new Point(541, 127);
             btnSistema.Name = "btnSistema";
-            btnSistema.Size = new Size(259, 97);
+            btnSistema.Size = new Size(181, 58);
             btnSistema.TabIndex = 1;
             btnSistema.Text = "Sistema";
             btnSistema.UseVisualStyleBackColor = true;
@@ -63,10 +62,9 @@
             // 
             btnCompetencias.AutoSize = true;
             btnCompetencias.Font = new Font("Segoe UI", 18F);
-            btnCompetencias.Location = new Point(773, 318);
-            btnCompetencias.Margin = new Padding(4, 5, 4, 5);
+            btnCompetencias.Location = new Point(541, 191);
             btnCompetencias.Name = "btnCompetencias";
-            btnCompetencias.Size = new Size(259, 97);
+            btnCompetencias.Size = new Size(181, 58);
             btnCompetencias.TabIndex = 2;
             btnCompetencias.Text = "Competencias";
             btnCompetencias.UseVisualStyleBackColor = true;
@@ -76,10 +74,9 @@
             // 
             btnParticipantes.AutoSize = true;
             btnParticipantes.Font = new Font("Segoe UI", 18F);
-            btnParticipantes.Location = new Point(773, 425);
-            btnParticipantes.Margin = new Padding(4, 5, 4, 5);
+            btnParticipantes.Location = new Point(541, 255);
             btnParticipantes.Name = "btnParticipantes";
-            btnParticipantes.Size = new Size(259, 97);
+            btnParticipantes.Size = new Size(181, 58);
             btnParticipantes.TabIndex = 3;
             btnParticipantes.Text = "Participantes";
             btnParticipantes.UseVisualStyleBackColor = true;
@@ -89,10 +86,9 @@
             // 
             btnEventos.AutoSize = true;
             btnEventos.Font = new Font("Segoe UI", 18F);
-            btnEventos.Location = new Point(773, 532);
-            btnEventos.Margin = new Padding(4, 5, 4, 5);
+            btnEventos.Location = new Point(541, 319);
             btnEventos.Name = "btnEventos";
-            btnEventos.Size = new Size(259, 97);
+            btnEventos.Size = new Size(181, 58);
             btnEventos.TabIndex = 4;
             btnEventos.Text = "Eventos";
             btnEventos.UseVisualStyleBackColor = true;
@@ -100,21 +96,22 @@
             // 
             // Principal
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.Fondo;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1134, 722);
+            ClientSize = new Size(798, 433);
             Controls.Add(btnEventos);
             Controls.Add(btnParticipantes);
             Controls.Add(btnCompetencias);
             Controls.Add(btnSistema);
             Controls.Add(label1);
-            Margin = new Padding(4, 5, 4, 5);
-            MaximumSize = new Size(1156, 778);
-            MinimumSize = new Size(1156, 778);
+            MaximumSize = new Size(814, 482);
+            MinimumSize = new Size(814, 446);
             Name = "Principal";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Principal";
+            Load += Principal_Load;
             ResumeLayout(false);
             PerformLayout();
         }

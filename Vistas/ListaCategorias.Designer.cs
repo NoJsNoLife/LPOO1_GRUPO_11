@@ -39,21 +39,19 @@
             // 
             dgwCategorias.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgwCategorias.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgwCategorias.Location = new Point(17, 172);
-            dgwCategorias.Margin = new Padding(4, 5, 4, 5);
+            dgwCategorias.Location = new Point(12, 103);
             dgwCategorias.Name = "dgwCategorias";
             dgwCategorias.RowHeadersWidth = 62;
-            dgwCategorias.Size = new Size(701, 409);
+            dgwCategorias.Size = new Size(491, 245);
             dgwCategorias.TabIndex = 0;
             // 
             // btnVolverSistema
             // 
             btnVolverSistema.BackgroundImage = Properties.Resources.volver;
             btnVolverSistema.BackgroundImageLayout = ImageLayout.Stretch;
-            btnVolverSistema.Location = new Point(649, 20);
-            btnVolverSistema.Margin = new Padding(4, 5, 4, 5);
+            btnVolverSistema.Location = new Point(454, 12);
             btnVolverSistema.Name = "btnVolverSistema";
-            btnVolverSistema.Size = new Size(69, 80);
+            btnVolverSistema.Size = new Size(48, 48);
             btnVolverSistema.TabIndex = 4;
             btnVolverSistema.UseVisualStyleBackColor = true;
             btnVolverSistema.Click += btnVolverSistema_Click;
@@ -62,19 +60,17 @@
             // 
             lblCategorias.AutoSize = true;
             lblCategorias.Font = new Font("Segoe UI", 20F);
-            lblCategorias.Location = new Point(17, 46);
-            lblCategorias.Margin = new Padding(4, 0, 4, 0);
+            lblCategorias.Location = new Point(12, 28);
             lblCategorias.Name = "lblCategorias";
-            lblCategorias.Size = new Size(211, 54);
+            lblCategorias.Size = new Size(144, 37);
             lblCategorias.TabIndex = 6;
             lblCategorias.Text = "Categorías";
             // 
             // btnAltaCategorias
             // 
-            btnAltaCategorias.Location = new Point(442, 20);
-            btnAltaCategorias.Margin = new Padding(4, 5, 4, 5);
+            btnAltaCategorias.Location = new Point(309, 12);
             btnAltaCategorias.Name = "btnAltaCategorias";
-            btnAltaCategorias.Size = new Size(199, 80);
+            btnAltaCategorias.Size = new Size(139, 48);
             btnAltaCategorias.TabIndex = 7;
             btnAltaCategorias.Text = "Alta de Categorias";
             btnAltaCategorias.UseVisualStyleBackColor = true;
@@ -82,21 +78,22 @@
             // 
             // ListaCategorias
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(748, 615);
+            ClientSize = new Size(528, 379);
             ControlBox = false;
             Controls.Add(btnAltaCategorias);
             Controls.Add(lblCategorias);
             Controls.Add(btnVolverSistema);
             Controls.Add(dgwCategorias);
-            Margin = new Padding(4, 5, 4, 5);
             MaximizeBox = false;
-            MaximumSize = new Size(770, 671);
+            MaximumSize = new Size(544, 418);
             MinimizeBox = false;
-            MinimumSize = new Size(770, 671);
+            MinimumSize = new Size(544, 418);
             Name = "ListaCategorias";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "ListaCategorias";
+            Load += ListaCategorias_Load;
             ((System.ComponentModel.ISupportInitialize)dgwCategorias).EndInit();
             ResumeLayout(false);
             PerformLayout();
