@@ -33,6 +33,7 @@
             btnCompetencias = new Button();
             btnParticipantes = new Button();
             btnEventos = new Button();
+            btnUsuarios = new Button();
             SuspendLayout();
             // 
             // label1
@@ -50,7 +51,7 @@
             // 
             btnSistema.AutoSize = true;
             btnSistema.Font = new Font("Segoe UI", 18F);
-            btnSistema.Location = new Point(541, 127);
+            btnSistema.Location = new Point(542, 82);
             btnSistema.Name = "btnSistema";
             btnSistema.Size = new Size(181, 58);
             btnSistema.TabIndex = 1;
@@ -62,7 +63,7 @@
             // 
             btnCompetencias.AutoSize = true;
             btnCompetencias.Font = new Font("Segoe UI", 18F);
-            btnCompetencias.Location = new Point(541, 191);
+            btnCompetencias.Location = new Point(542, 146);
             btnCompetencias.Name = "btnCompetencias";
             btnCompetencias.Size = new Size(181, 58);
             btnCompetencias.TabIndex = 2;
@@ -74,7 +75,7 @@
             // 
             btnParticipantes.AutoSize = true;
             btnParticipantes.Font = new Font("Segoe UI", 18F);
-            btnParticipantes.Location = new Point(541, 255);
+            btnParticipantes.Location = new Point(542, 210);
             btnParticipantes.Name = "btnParticipantes";
             btnParticipantes.Size = new Size(181, 58);
             btnParticipantes.TabIndex = 3;
@@ -86,13 +87,25 @@
             // 
             btnEventos.AutoSize = true;
             btnEventos.Font = new Font("Segoe UI", 18F);
-            btnEventos.Location = new Point(541, 319);
+            btnEventos.Location = new Point(542, 274);
             btnEventos.Name = "btnEventos";
             btnEventos.Size = new Size(181, 58);
             btnEventos.TabIndex = 4;
             btnEventos.Text = "Eventos";
             btnEventos.UseVisualStyleBackColor = true;
             btnEventos.Click += btnEventos_Click;
+            // 
+            // btnUsuarios
+            // 
+            btnUsuarios.AutoSize = true;
+            btnUsuarios.Font = new Font("Segoe UI", 18F);
+            btnUsuarios.Location = new Point(542, 338);
+            btnUsuarios.Name = "btnUsuarios";
+            btnUsuarios.Size = new Size(181, 58);
+            btnUsuarios.TabIndex = 5;
+            btnUsuarios.Text = "Usuarios";
+            btnUsuarios.UseVisualStyleBackColor = true;
+            btnUsuarios.Click += button1_Click;
             // 
             // Principal
             // 
@@ -101,6 +114,7 @@
             BackgroundImage = Properties.Resources.Fondo;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(798, 433);
+            Controls.Add(btnUsuarios);
             Controls.Add(btnEventos);
             Controls.Add(btnParticipantes);
             Controls.Add(btnCompetencias);
@@ -123,5 +137,6 @@
         private Button btnCompetencias;
         private Button btnParticipantes;
         private Button btnEventos;
+        private Button btnUsuarios;
     }
 }
