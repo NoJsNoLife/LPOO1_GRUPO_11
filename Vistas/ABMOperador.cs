@@ -10,26 +10,26 @@ using System.Windows.Forms;
 
 namespace Vistas
 {
-    public partial class Sistema : Form
+    public partial class ABMOperador : Form
     {
-        private Form prinicpalReferencia;
-        public Sistema(Form principal)
+        //private Form prinicpalReferencia;
+        public ABMOperador(/*Form principal*/)
         {
             InitializeComponent();
-            prinicpalReferencia = principal;
+            //prinicpalReferencia = principal;
         }
 
         private void btnVolverSistema_Click(object sender, EventArgs e)
         {
             this.Hide();
-            prinicpalReferencia.Show();
+            //prinicpalReferencia.Show();
         }
 
         private void btnListaCategorias_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            /*this.Hide();
             Form listaCategorias = new ListaCategorias(this);
-            listaCategorias.Show();
+            listaCategorias.Show();*/
         }
 
         private void btnListaDisciplinas_Click(object sender, EventArgs e)
@@ -39,9 +39,18 @@ namespace Vistas
             listaDisciplinas.Show();
         }
 
-        private void Sistema_Load(object sender, EventArgs e)
+        private void btnAtletas_Click(object sender, EventArgs e)
         {
+            this.Hide();
+            Form listaAtletas = new Atletas(this);
+            listaAtletas.Show();
+        }
 
+        private void btnCompetencias_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form listaCompetencias = new Competencias(this);
+            listaCompetencias.Show();
         }
     }
 }

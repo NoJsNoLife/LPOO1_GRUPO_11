@@ -36,12 +36,11 @@ namespace Vistas
                 {
                     return;
                 }
-                Atleta atleta = new Atleta(
-                DatosGlobales.atletas.Count + 1, txtDni.Text, txtApellido.Text, txtNombre.Text, txtNacionalidad.Text, txtEntrenador.Text, selectSexo.Text[0], (double)numericAltura.Value, (double)numericPeso.Value, dateTimeNacimiento.Value, txtDireccion.Text, txtEmail.Text);
-                DatosGlobales.atletas.Add(atleta);
-                MessageBox.Show("Atleta agregado correctamente", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                TrabajarAtletas.alta_atleta(txtDni.Text, txtApellido.Text, txtNombre.Text, txtNacionalidad.Text, txtEntrenador.Text, 
+                    selectSexo.Text, (double)numericAltura.Value, (double)numericPeso.Value, dateTimeNacimiento.Value, txtDireccion.Text, 
+                    txtEmail.Text);
+                MessageBox.Show("Atleta agregado correctamente", "Atleta Registrado");
             }
-
         }
 
         private void btnVolverSistema_Click(object sender, EventArgs e)

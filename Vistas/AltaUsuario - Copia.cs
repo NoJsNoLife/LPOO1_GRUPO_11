@@ -11,43 +11,14 @@ using System.Windows.Forms;
 
 namespace Vistas
 {
-    public partial class ModificarUsuario : Form
+    public partial class AltaUsuario : Form
     {
-        private Form referencia;
-        private string viejoUsuario = "";
-        public ModificarUsuario(Form referencia)
+        public AltaUsuario()
         {
             InitializeComponent();
-            this.referencia = referencia;
         }
 
         private void btnEnviarUsuario_Click(object sender, EventArgs e)
-        {
-
-            if (viejoUsuario != null)
-            {
-                string nuevoUsuario = txtNombreUsuario.Text;
-                string nuevaConstrania = txtContraseniaUsuario.Text;
-                string nuevoNombreYApellido = txtApellidoNombreUsuario.Text;
-                int nuevoRol = Convert.ToInt32(cmbRoles.SelectedIndex) + 1;
-                if (TrabajarUsuario.existe_usuario(nuevoUsuario))
-                {
-                    MessageBox.Show("Ese usuario ya existe");
-                    return;
-                }
-                else
-                {
-                    TrabajarUsuario.modificar_usuario(viejoUsuario, nuevoUsuario, nuevaConstrania, nuevoNombreYApellido, nuevoRol);
-                    load_usuarios();
-                    MessageBox.Show("Usuario modificado con éxito");
-                }
-            }
-            else
-            {
-                MessageBox.Show("Debe seleccionar un usuario para modificar");
-            }
-        }
-        /*private void btnEnviarUsuario_Click(object sender, EventArgs e)
         {
             if (TrabajarUsuario.existe_usuario(txtNombreUsuario.Text))
             {
@@ -60,7 +31,7 @@ namespace Vistas
                 load_usuarios();
                 MessageBox.Show("Usuario creado con éxito");
             }
-        }*/
+        }
 
         private void AltaUsuario_Load(object sender, EventArgs e)
         {
@@ -93,28 +64,12 @@ namespace Vistas
         }
         private void dgwUsuarios_CurrentCellChanged(object sender, EventArgs e)
         {
-            if (dgwUsuarios.CurrentRow != null && !Convert.IsDBNull(dgwUsuarios.CurrentRow.Cells["Rol_Codigo"].Value))
+            if (dgwUsuarios.CurrentRow!=null)
             {
-                viejoUsuario = dgwUsuarios.CurrentRow.Cells["Usuario"].Value.ToString()!;
                 txtNombreUsuario.Text = dgwUsuarios.CurrentRow.Cells["Usuario"].Value.ToString();
                 txtContraseniaUsuario.Text = dgwUsuarios.CurrentRow.Cells["Contrasena"].Value.ToString();
                 txtApellidoNombreUsuario.Text = dgwUsuarios.CurrentRow.Cells["Apellido y Nombre"].Value.ToString();
                 cmbRoles.SelectedIndex = Convert.ToInt32(dgwUsuarios.CurrentRow.Cells["Rol_Codigo"].Value) - 1;
-            }
-        }
-
-        private void btnVolverSistema_Click(object sender, EventArgs e)
-        {
-            this.Close();
-            this.referencia.Show();
-        }
-
-        private void btnBorrar_Click(object sender, EventArgs e)
-        {
-            if(MessageBox.Show("¿Desea eliminar este usuario?", "Eliminar Usuario", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
-                TrabajarUsuario.borrar_usuario(viejoUsuario);
-                load_usuarios();
             }
         }
     }

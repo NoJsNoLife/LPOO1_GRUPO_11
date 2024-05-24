@@ -21,7 +21,7 @@ namespace Vistas
         private void btnSistema_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form sistema = new Sistema(this);
+            Form sistema = new ABMOperador(/*this*/);
             sistema.Show();
         }
 
@@ -35,7 +35,7 @@ namespace Vistas
         private void btnParticipantes_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form participantes = new Participantes(this);
+            Form participantes = new Atletas(this);
             participantes.Show();
         }
 

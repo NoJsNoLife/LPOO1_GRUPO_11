@@ -1,6 +1,6 @@
 ﻿namespace Vistas
 {
-    partial class Participantes
+    partial class Atletas
     {
         /// <summary>
         /// Required designer variable.
@@ -31,10 +31,10 @@
             components = new System.ComponentModel.Container();
             btnVolverSistema = new Button();
             label1 = new Label();
-            dataGridView1 = new DataGridView();
+            dgwAtletas = new DataGridView();
             atletaBindingSource = new BindingSource(components);
             btnAltaParticipantes = new Button();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgwAtletas).BeginInit();
             ((System.ComponentModel.ISupportInitialize)atletaBindingSource).BeginInit();
             SuspendLayout();
             // 
@@ -42,9 +42,10 @@
             // 
             btnVolverSistema.BackgroundImage = Properties.Resources.volver;
             btnVolverSistema.BackgroundImageLayout = ImageLayout.Stretch;
-            btnVolverSistema.Location = new Point(740, 12);
+            btnVolverSistema.Location = new Point(1057, 20);
+            btnVolverSistema.Margin = new Padding(4, 5, 4, 5);
             btnVolverSistema.Name = "btnVolverSistema";
-            btnVolverSistema.Size = new Size(48, 48);
+            btnVolverSistema.Size = new Size(69, 80);
             btnVolverSistema.TabIndex = 4;
             btnVolverSistema.UseVisualStyleBackColor = true;
             btnVolverSistema.Click += btnVolverSistema_Click;
@@ -53,24 +54,26 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 20F);
-            label1.Location = new Point(12, 23);
+            label1.Location = new Point(17, 38);
+            label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(168, 37);
+            label1.Size = new Size(145, 54);
             label1.TabIndex = 5;
-            label1.Text = "Participantes";
+            label1.Text = "Atletas";
             // 
-            // dataGridView1
+            // dgwAtletas
             // 
-            dataGridView1.AllowUserToAddRows = false;
-            dataGridView1.AllowUserToResizeColumns = false;
-            dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(12, 77);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(776, 322);
-            dataGridView1.TabIndex = 6;
+            dgwAtletas.AllowUserToAddRows = false;
+            dgwAtletas.AllowUserToResizeColumns = false;
+            dgwAtletas.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dgwAtletas.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgwAtletas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgwAtletas.Location = new Point(17, 128);
+            dgwAtletas.Margin = new Padding(4, 5, 4, 5);
+            dgwAtletas.Name = "dgwAtletas";
+            dgwAtletas.RowHeadersWidth = 62;
+            dgwAtletas.Size = new Size(1109, 537);
+            dgwAtletas.TabIndex = 6;
             // 
             // atletaBindingSource
             // 
@@ -80,30 +83,33 @@
             // 
             btnAltaParticipantes.BackColor = SystemColors.ActiveCaption;
             btnAltaParticipantes.Font = new Font("Segoe UI", 12F);
-            btnAltaParticipantes.Location = new Point(558, 12);
+            btnAltaParticipantes.Location = new Point(797, 20);
+            btnAltaParticipantes.Margin = new Padding(4, 5, 4, 5);
             btnAltaParticipantes.Name = "btnAltaParticipantes";
-            btnAltaParticipantes.Size = new Size(176, 48);
+            btnAltaParticipantes.Size = new Size(251, 80);
             btnAltaParticipantes.TabIndex = 7;
-            btnAltaParticipantes.Text = "Alta de Participantes";
+            btnAltaParticipantes.Text = "Registrar Atleta";
             btnAltaParticipantes.UseVisualStyleBackColor = false;
             btnAltaParticipantes.Click += btnAltaParticipantes_Click;
             // 
-            // Participantes
+            // Atletas
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(798, 433);
+            ClientSize = new Size(1131, 710);
             ControlBox = false;
             Controls.Add(btnAltaParticipantes);
-            Controls.Add(dataGridView1);
+            Controls.Add(dgwAtletas);
             Controls.Add(label1);
             Controls.Add(btnVolverSistema);
-            MaximumSize = new Size(814, 482);
-            MinimumSize = new Size(814, 446);
-            Name = "Participantes";
+            Margin = new Padding(4, 5, 4, 5);
+            MaximumSize = new Size(1153, 766);
+            MinimumSize = new Size(1153, 706);
+            Name = "Atletas";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Participantes";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            Text = "Atletas";
+            Load += Atletas_Load;
+            ((System.ComponentModel.ISupportInitialize)dgwAtletas).EndInit();
             ((System.ComponentModel.ISupportInitialize)atletaBindingSource).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -113,7 +119,7 @@
 
         private Button btnVolverSistema;
         private Label label1;
-        private DataGridView dataGridView1;
+        private DataGridView dgwAtletas;
         private BindingSource atletaBindingSource;
         private Button btnAltaParticipantes;
     }

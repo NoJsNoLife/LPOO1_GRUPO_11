@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Vistas
 {
-    public partial class ABMUsuarios : Form
+    public partial class ModificarUsuario : Form
     {
-        public ABMUsuarios()
+        public ModificarUsuario()
         {
             InitializeComponent();
         }

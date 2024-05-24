@@ -1,6 +1,6 @@
 ﻿namespace Vistas
 {
-    partial class ModificarUsuario
+    partial class AltaUsuario
     {
         /// <summary>
         /// Required designer variable.
@@ -41,165 +41,124 @@
             lblNombreUsuarioBuscar = new Label();
             txtNombreUsuarioBuscar = new TextBox();
             btnNombreUsuarioBuscar = new Button();
-            btnBorrar = new Button();
-            btnVolverSistema = new Button();
             ((System.ComponentModel.ISupportInitialize)dgwUsuarios).BeginInit();
             SuspendLayout();
             // 
             // btnEnviarUsuario
             // 
-            btnEnviarUsuario.Location = new Point(814, 539);
-            btnEnviarUsuario.Margin = new Padding(4, 5, 4, 5);
+            btnEnviarUsuario.Location = new Point(631, 323);
             btnEnviarUsuario.Name = "btnEnviarUsuario";
-            btnEnviarUsuario.Size = new Size(171, 90);
+            btnEnviarUsuario.Size = new Size(120, 54);
             btnEnviarUsuario.TabIndex = 0;
-            btnEnviarUsuario.Text = "Modificar";
+            btnEnviarUsuario.Text = "Enviar";
             btnEnviarUsuario.UseVisualStyleBackColor = true;
             btnEnviarUsuario.Click += btnEnviarUsuario_Click;
             // 
             // lblNombreUsuario
             // 
             lblNombreUsuario.AutoSize = true;
-            lblNombreUsuario.Location = new Point(814, 88);
-            lblNombreUsuario.Margin = new Padding(4, 0, 4, 0);
+            lblNombreUsuario.Location = new Point(570, 53);
             lblNombreUsuario.Name = "lblNombreUsuario";
-            lblNombreUsuario.Size = new Size(168, 25);
+            lblNombreUsuario.Size = new Size(110, 15);
             lblNombreUsuario.TabIndex = 1;
             lblNombreUsuario.Text = "Nombre de Usuario";
             // 
             // txtNombreUsuario
             // 
-            txtNombreUsuario.Location = new Point(814, 118);
-            txtNombreUsuario.Margin = new Padding(4, 5, 4, 5);
+            txtNombreUsuario.Location = new Point(570, 71);
             txtNombreUsuario.Name = "txtNombreUsuario";
-            txtNombreUsuario.Size = new Size(357, 31);
+            txtNombreUsuario.Size = new Size(251, 23);
             txtNombreUsuario.TabIndex = 2;
             // 
             // txtContraseniaUsuario
             // 
-            txtContraseniaUsuario.Location = new Point(814, 228);
-            txtContraseniaUsuario.Margin = new Padding(4, 5, 4, 5);
+            txtContraseniaUsuario.Location = new Point(570, 137);
             txtContraseniaUsuario.Name = "txtContraseniaUsuario";
-            txtContraseniaUsuario.Size = new Size(357, 31);
+            txtContraseniaUsuario.Size = new Size(251, 23);
             txtContraseniaUsuario.TabIndex = 3;
             // 
             // txtApellidoNombreUsuario
             // 
-            txtApellidoNombreUsuario.Location = new Point(814, 337);
-            txtApellidoNombreUsuario.Margin = new Padding(4, 5, 4, 5);
+            txtApellidoNombreUsuario.Location = new Point(570, 202);
             txtApellidoNombreUsuario.Name = "txtApellidoNombreUsuario";
-            txtApellidoNombreUsuario.Size = new Size(357, 31);
+            txtApellidoNombreUsuario.Size = new Size(251, 23);
             txtApellidoNombreUsuario.TabIndex = 4;
             // 
             // lblContraseniaUsuario
             // 
             lblContraseniaUsuario.AutoSize = true;
-            lblContraseniaUsuario.Location = new Point(814, 198);
-            lblContraseniaUsuario.Margin = new Padding(4, 0, 4, 0);
+            lblContraseniaUsuario.Location = new Point(570, 119);
             lblContraseniaUsuario.Name = "lblContraseniaUsuario";
-            lblContraseniaUsuario.Size = new Size(105, 25);
+            lblContraseniaUsuario.Size = new Size(70, 15);
             lblContraseniaUsuario.TabIndex = 6;
             lblContraseniaUsuario.Text = "Contrasenia";
             // 
             // lblApellidoNombreUsuario
             // 
             lblApellidoNombreUsuario.AutoSize = true;
-            lblApellidoNombreUsuario.Location = new Point(814, 307);
-            lblApellidoNombreUsuario.Margin = new Padding(4, 0, 4, 0);
+            lblApellidoNombreUsuario.Location = new Point(570, 184);
             lblApellidoNombreUsuario.Name = "lblApellidoNombreUsuario";
-            lblApellidoNombreUsuario.Size = new Size(163, 25);
+            lblApellidoNombreUsuario.Size = new Size(107, 15);
             lblApellidoNombreUsuario.TabIndex = 7;
             lblApellidoNombreUsuario.Text = "Apellido y Nombre";
             // 
             // lblCodigoRolUsuario
             // 
             lblCodigoRolUsuario.AutoSize = true;
-            lblCodigoRolUsuario.Location = new Point(814, 403);
-            lblCodigoRolUsuario.Margin = new Padding(4, 0, 4, 0);
+            lblCodigoRolUsuario.Location = new Point(570, 242);
             lblCodigoRolUsuario.Name = "lblCodigoRolUsuario";
-            lblCodigoRolUsuario.Size = new Size(126, 25);
+            lblCodigoRolUsuario.Size = new Size(82, 15);
             lblCodigoRolUsuario.TabIndex = 8;
             lblCodigoRolUsuario.Text = "Código de Rol";
             // 
             // cmbRoles
             // 
             cmbRoles.FormattingEnabled = true;
-            cmbRoles.Location = new Point(814, 433);
-            cmbRoles.Margin = new Padding(4, 5, 4, 5);
+            cmbRoles.Location = new Point(570, 260);
             cmbRoles.Name = "cmbRoles";
-            cmbRoles.Size = new Size(357, 33);
+            cmbRoles.Size = new Size(251, 23);
             cmbRoles.TabIndex = 9;
             // 
             // dgwUsuarios
             // 
             dgwUsuarios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgwUsuarios.Location = new Point(46, 147);
-            dgwUsuarios.Margin = new Padding(4, 5, 4, 5);
+            dgwUsuarios.Location = new Point(32, 88);
             dgwUsuarios.Name = "dgwUsuarios";
-            dgwUsuarios.RowHeadersWidth = 62;
-            dgwUsuarios.Size = new Size(710, 482);
+            dgwUsuarios.Size = new Size(497, 289);
             dgwUsuarios.TabIndex = 10;
             dgwUsuarios.CurrentCellChanged += dgwUsuarios_CurrentCellChanged;
             // 
             // lblNombreUsuarioBuscar
             // 
             lblNombreUsuarioBuscar.AutoSize = true;
-            lblNombreUsuarioBuscar.Location = new Point(46, 88);
-            lblNombreUsuarioBuscar.Margin = new Padding(4, 0, 4, 0);
+            lblNombreUsuarioBuscar.Location = new Point(32, 53);
             lblNombreUsuarioBuscar.Name = "lblNombreUsuarioBuscar";
-            lblNombreUsuarioBuscar.Size = new Size(168, 25);
+            lblNombreUsuarioBuscar.Size = new Size(110, 15);
             lblNombreUsuarioBuscar.TabIndex = 11;
             lblNombreUsuarioBuscar.Text = "Nombre de Usuario";
             // 
             // txtNombreUsuarioBuscar
             // 
-            txtNombreUsuarioBuscar.Location = new Point(211, 83);
-            txtNombreUsuarioBuscar.Margin = new Padding(4, 5, 4, 5);
+            txtNombreUsuarioBuscar.Location = new Point(148, 50);
             txtNombreUsuarioBuscar.Name = "txtNombreUsuarioBuscar";
-            txtNombreUsuarioBuscar.Size = new Size(357, 31);
+            txtNombreUsuarioBuscar.Size = new Size(251, 23);
             txtNombreUsuarioBuscar.TabIndex = 12;
             // 
             // btnNombreUsuarioBuscar
             // 
-            btnNombreUsuarioBuscar.Location = new Point(584, 83);
-            btnNombreUsuarioBuscar.Margin = new Padding(4, 5, 4, 5);
+            btnNombreUsuarioBuscar.Location = new Point(409, 50);
             btnNombreUsuarioBuscar.Name = "btnNombreUsuarioBuscar";
-            btnNombreUsuarioBuscar.Size = new Size(171, 38);
+            btnNombreUsuarioBuscar.Size = new Size(120, 23);
             btnNombreUsuarioBuscar.TabIndex = 13;
             btnNombreUsuarioBuscar.Text = "Buscar";
             btnNombreUsuarioBuscar.UseVisualStyleBackColor = true;
             btnNombreUsuarioBuscar.Click += btnNombreUsuarioBuscar_Click;
             // 
-            // btnBorrar
+            // AltaUsuario
             // 
-            btnBorrar.Location = new Point(1000, 539);
-            btnBorrar.Margin = new Padding(4, 5, 4, 5);
-            btnBorrar.Name = "btnBorrar";
-            btnBorrar.Size = new Size(171, 90);
-            btnBorrar.TabIndex = 14;
-            btnBorrar.Text = "Borrar";
-            btnBorrar.UseVisualStyleBackColor = true;
-            btnBorrar.Click += btnBorrar_Click;
-            // 
-            // btnVolverSistema
-            // 
-            btnVolverSistema.BackgroundImage = Properties.Resources.volver;
-            btnVolverSistema.BackgroundImageLayout = ImageLayout.Stretch;
-            btnVolverSistema.Location = new Point(1248, 14);
-            btnVolverSistema.Margin = new Padding(4, 5, 4, 5);
-            btnVolverSistema.Name = "btnVolverSistema";
-            btnVolverSistema.Size = new Size(69, 80);
-            btnVolverSistema.TabIndex = 37;
-            btnVolverSistema.UseVisualStyleBackColor = true;
-            btnVolverSistema.Click += btnVolverSistema_Click;
-            // 
-            // ModificarUsuario
-            // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1330, 750);
-            Controls.Add(btnVolverSistema);
-            Controls.Add(btnBorrar);
+            ClientSize = new Size(931, 450);
             Controls.Add(btnNombreUsuarioBuscar);
             Controls.Add(txtNombreUsuarioBuscar);
             Controls.Add(lblNombreUsuarioBuscar);
@@ -213,8 +172,7 @@
             Controls.Add(txtNombreUsuario);
             Controls.Add(lblNombreUsuario);
             Controls.Add(btnEnviarUsuario);
-            Margin = new Padding(4, 5, 4, 5);
-            Name = "ModificarUsuario";
+            Name = "AltaUsuario";
             Text = "AltaUsuario";
             Load += AltaUsuario_Load;
             ((System.ComponentModel.ISupportInitialize)dgwUsuarios).EndInit();
@@ -237,7 +195,5 @@
         private Label lblNombreUsuarioBuscar;
         private TextBox txtNombreUsuarioBuscar;
         private Button btnNombreUsuarioBuscar;
-        private Button btnBorrar;
-        private Button btnVolverSistema;
     }
 }
