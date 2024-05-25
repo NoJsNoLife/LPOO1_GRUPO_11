@@ -28,7 +28,7 @@ namespace Vistas
         private void btnVerUsuarios_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form modificarUsuarios = new ModificarUsuario(this);
+            Form modificarUsuarios = new ABMUsuarios(this);
             modificarUsuarios.Show();
         }
     }

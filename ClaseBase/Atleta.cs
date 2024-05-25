@@ -14,7 +14,7 @@ namespace ClaseBase
         private string atl_Nombre;
         private string atl_Nacionalidad;
         private string atl_Entrenador;
-        private char atl_Genero;
+        private string atl_Genero;
         private double atl_Altura;
         private double atl_Peso;
         private DateTime atl_FechaNac;
@@ -27,7 +27,7 @@ namespace ClaseBase
         public string Atl_Nombre { get => atl_Nombre; set => atl_Nombre = value; }
         public string Atl_Nacionalidad { get => atl_Nacionalidad; set => atl_Nacionalidad = value; }
         public string Atl_Entrenador { get => atl_Entrenador; set => atl_Entrenador = value; }
-        public char Atl_Genero { get => atl_Genero; set => atl_Genero = value; }
+        public string Atl_Genero { get => atl_Genero; set => atl_Genero = value; }
         public double Atl_Altura { get => atl_Altura; set => atl_Altura = value; }
         public double Atl_Peso { get => atl_Peso; set => atl_Peso = value; }
         public DateTime Atl_FechaNac { get => atl_FechaNac; set => atl_FechaNac = value; }
@@ -38,7 +38,7 @@ namespace ClaseBase
         {
         }
 
-        public Atleta(int atl_ID, string atl_DNI, string atl_Apellido, string atl_Nombre, string atl_Nacionalidad, string atl_Entrenador, char atl_Genero, double atl_Altura, double atl_Peso, DateTime atl_FechaNac, string atl_Dirección, string atl_email)
+        public Atleta(int atl_ID, string atl_DNI, string atl_Apellido, string atl_Nombre, string atl_Nacionalidad, string atl_Entrenador, string atl_Genero, double atl_Altura, double atl_Peso, DateTime atl_FechaNac, string atl_Dirección, string atl_email)
         {
             Atl_ID = atl_ID;
             Atl_DNI = atl_DNI;

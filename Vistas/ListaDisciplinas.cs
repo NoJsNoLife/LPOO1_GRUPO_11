@@ -29,7 +29,7 @@ namespace Vistas
 
         private void btnVolverSistema_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
             sistemaReferencia.Show();
         }
 

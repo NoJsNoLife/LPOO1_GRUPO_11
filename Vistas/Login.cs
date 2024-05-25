@@ -16,6 +16,7 @@ namespace Vistas
         public Login()
         {
             InitializeComponent();
+            this.FormClosed += (s, e) => Application.Exit();
             txtNombre.Text = "Administrador";
             txtContrasena.Text = "admin";
         }
@@ -23,11 +24,12 @@ namespace Vistas
         private void btnIngresar_Click(object sender, EventArgs e)
         {   String nombre = txtNombre.Text;
             String contrasena = txtContrasena.Text;
-            if (DatosGlobales.usuarios.Exists(u => u.Usu_NombreUsuario == nombre && u.Usu_Contraseña == contrasena))
+            Usuario usuario = TrabajarUsuario.loginUsuario(nombre, contrasena);
+            if (usuario != null)
             {
                 MessageBox.Show("Bienvenido al sistema", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Hide();
-                Form principal = new Principal();
+                Form principal = new Principal(usuario.Rol_Codigo,this);
                 principal.Show();
             }
             else {

@@ -14,23 +14,34 @@ namespace Vistas
     public partial class Atletas : Form
     {
         private Form prinicpalReferencia;
+        private String atletaDni;
+
         public Atletas(Form referenciaSistema)
         {
             prinicpalReferencia = referenciaSistema;
             InitializeComponent();
+            dgwAtletas.MultiSelect = false;
+        }
+
+        private void Atletas_VisibleChanged(object sender, EventArgs e)
+        {
+            // Si el formulario es visible, carga los atletas
+            if (this.Visible)
+            {
+                load_atletas();
+            }
         }
 
         private void btnVolverSistema_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
             prinicpalReferencia.Show();
-
         }
 
         private void btnAltaParticipantes_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form altaParticipantes = new AltaParticipantes(this);
+            AltaParticipantes altaParticipantes = new AltaParticipantes(this, null);
             altaParticipantes.Show();
         }
 
@@ -41,7 +52,33 @@ namespace Vistas
 
         private void load_atletas()
         {
+            dgwAtletas.DataSource = null;
             dgwAtletas.DataSource = ClaseBase.TrabajarAtletas.list_atletas();
+        }
+
+        private void dgwAtletas_SelectionChanged(object sender, EventArgs e)
+        {
+            atletaDni = dgwAtletas.CurrentRow.Cells[0].Value.ToString();
+            btnModificar.Enabled = true;
+            btnEliminar.Enabled = true;
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("¿Está seguro que desea eliminar el participante?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.No)
+            {
+                return;
+            }
+            TrabajarAtletas.baja_atleta(atletaDni);
+            load_atletas();
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AltaParticipantes altaParticipantes = new AltaParticipantes(this, atletaDni);
+            altaParticipantes.Show();
         }
     }
 }

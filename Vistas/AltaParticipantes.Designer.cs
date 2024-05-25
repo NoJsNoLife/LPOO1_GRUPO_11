@@ -55,6 +55,7 @@
             label11 = new Label();
             btnAgregar = new Button();
             btnVolverSistema = new Button();
+            btnModificar = new Button();
             ((System.ComponentModel.ISupportInitialize)numericAltura).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericPeso).BeginInit();
             SuspendLayout();
@@ -290,6 +291,7 @@
             btnAgregar.TabIndex = 26;
             btnAgregar.Text = "Agregar";
             btnAgregar.UseVisualStyleBackColor = true;
+            btnAgregar.Visible = false;
             btnAgregar.Click += btnAgregar_Click;
             // 
             // btnVolverSistema
@@ -303,12 +305,26 @@
             btnVolverSistema.UseVisualStyleBackColor = true;
             btnVolverSistema.Click += btnVolverSistema_Click;
             // 
+            // btnModificar
+            // 
+            btnModificar.Anchor = AnchorStyles.Bottom;
+            btnModificar.Font = new Font("Segoe UI", 14F);
+            btnModificar.Location = new Point(275, 391);
+            btnModificar.Name = "btnModificar";
+            btnModificar.Size = new Size(247, 47);
+            btnModificar.TabIndex = 27;
+            btnModificar.Text = "Modificar";
+            btnModificar.UseVisualStyleBackColor = true;
+            btnModificar.Visible = false;
+            btnModificar.Click += btnModificar_Click;
+            // 
             // AltaParticipantes
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 449);
             ControlBox = false;
+            Controls.Add(btnModificar);
             Controls.Add(btnAgregar);
             Controls.Add(numericPeso);
             Controls.Add(label11);
@@ -372,5 +388,6 @@
         private Label label11;
         private Button btnAgregar;
         private Button btnVolverSistema;
+        private Button btnModificar;
     }
 }

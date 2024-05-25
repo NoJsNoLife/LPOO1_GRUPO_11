@@ -10,26 +10,27 @@ using System.Windows.Forms;
 
 namespace Vistas
 {
-    public partial class ABMOperador : Form
+    public partial class Sistema : Form
     {
-        //private Form prinicpalReferencia;
-        public ABMOperador(/*Form principal*/)
+        private Form prinicpalReferencia;
+        public Sistema(Form principal)
         {
             InitializeComponent();
-            //prinicpalReferencia = principal;
+            prinicpalReferencia = principal;
+
         }
 
         private void btnVolverSistema_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            //prinicpalReferencia.Show();
+            this.Close();
+            prinicpalReferencia.Show();
         }
 
         private void btnListaCategorias_Click(object sender, EventArgs e)
         {
-            /*this.Hide();
+            this.Hide();
             Form listaCategorias = new ListaCategorias(this);
-            listaCategorias.Show();*/
+            listaCategorias.Show();
         }
 
         private void btnListaDisciplinas_Click(object sender, EventArgs e)

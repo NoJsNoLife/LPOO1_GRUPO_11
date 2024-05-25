@@ -12,16 +12,40 @@ namespace Vistas
 {
     public partial class Principal : Form
     {
-        public Principal()
+        private Form referenciaLogin;
+        public Principal(int rolCodigo, Form referenciaLogin)
         {
             InitializeComponent();
-            this.FormClosed += (s, e) => Application.Exit();
+            referenciaLogin = referenciaLogin;
+            
+            switch (rolCodigo)
+            {
+                case 1:
+                    pnlAdmin.Visible = true;
+                    pnlAdmin.BringToFront();
+                    break;
+                case 2:
+                    pnlOperador.Visible = true;
+                    pnlOperador.BringToFront();
+                    break;
+                case 3:
+                    pnlAuditor.Visible = true;
+                    pnlAuditor.BringToFront();
+                    break;
+                default:
+                    MessageBox.Show("Rol no válido");
+                    break;
+
+
+            }
+
+            this.referenciaLogin = referenciaLogin;
         }
 
         private void btnSistema_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form sistema = new ABMOperador(/*this*/);
+            Form sistema = new Sistema(this);
             sistema.Show();
         }
 
@@ -46,12 +70,20 @@ namespace Vistas
             eventos.Show();
         }
 
-        private void Principal_Load(object sender, EventArgs e)
+        private void btn_Usuarios_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            Form usuarios = new ABMUsuarios(this);
+            usuarios.Show();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            referenciaLogin.Show();
+        }
+
+        private void Principal_Shown(object sender, EventArgs e)
         {
 
         }

@@ -14,7 +14,7 @@ namespace Vistas
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             DatosGlobales.cargarDatos();
-            Application.Run(new ABMOperador());;
+            Application.Run(new Login());;
             
         }
     }

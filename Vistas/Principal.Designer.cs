@@ -29,11 +29,24 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            btnSistema = new Button();
-            btnCompetencias = new Button();
-            btnParticipantes = new Button();
-            btnEventos = new Button();
-            btnUsuarios = new Button();
+            pnlAdmin = new Panel();
+            btnUsuariosAdmin = new Button();
+            label2 = new Label();
+            pnlOperador = new Panel();
+            btnParticipantesOp = new Button();
+            btnCompetenciasOp = new Button();
+            label3 = new Label();
+            pnlAuditor = new Panel();
+            btnUsuariosAud = new Button();
+            btnSistemaAud = new Button();
+            btnEventosAud = new Button();
+            btnParticipantesAud = new Button();
+            btnCompetenciasAud = new Button();
+            label4 = new Label();
+            btnCerrarSesion = new Button();
+            pnlAdmin.SuspendLayout();
+            pnlOperador.SuspendLayout();
+            pnlAuditor.SuspendLayout();
             SuspendLayout();
             // 
             // label1
@@ -47,65 +60,186 @@
             label1.Text = "Bienvenido al Sistema de control de Eventos!";
             label1.TextAlign = ContentAlignment.TopCenter;
             // 
-            // btnSistema
+            // pnlAdmin
             // 
-            btnSistema.AutoSize = true;
-            btnSistema.Font = new Font("Segoe UI", 18F);
-            btnSistema.Location = new Point(542, 82);
-            btnSistema.Name = "btnSistema";
-            btnSistema.Size = new Size(181, 58);
-            btnSistema.TabIndex = 1;
-            btnSistema.Text = "Sistema";
-            btnSistema.UseVisualStyleBackColor = true;
-            btnSistema.Click += btnSistema_Click;
+            pnlAdmin.BackColor = Color.Transparent;
+            pnlAdmin.Controls.Add(btnUsuariosAdmin);
+            pnlAdmin.Controls.Add(label2);
+            pnlAdmin.Location = new Point(50, 82);
+            pnlAdmin.Name = "pnlAdmin";
+            pnlAdmin.Size = new Size(673, 314);
+            pnlAdmin.TabIndex = 1;
+            pnlAdmin.Visible = false;
             // 
-            // btnCompetencias
+            // btnUsuariosAdmin
             // 
-            btnCompetencias.AutoSize = true;
-            btnCompetencias.Font = new Font("Segoe UI", 18F);
-            btnCompetencias.Location = new Point(542, 146);
-            btnCompetencias.Name = "btnCompetencias";
-            btnCompetencias.Size = new Size(181, 58);
-            btnCompetencias.TabIndex = 2;
-            btnCompetencias.Text = "Competencias";
-            btnCompetencias.UseVisualStyleBackColor = true;
-            btnCompetencias.Click += btnCompetencias_Click;
+            btnUsuariosAdmin.AutoSize = true;
+            btnUsuariosAdmin.Font = new Font("Segoe UI", 18F);
+            btnUsuariosAdmin.Location = new Point(16, 76);
+            btnUsuariosAdmin.Name = "btnUsuariosAdmin";
+            btnUsuariosAdmin.Size = new Size(181, 58);
+            btnUsuariosAdmin.TabIndex = 8;
+            btnUsuariosAdmin.Text = "Usuarios";
+            btnUsuariosAdmin.UseVisualStyleBackColor = true;
+            btnUsuariosAdmin.Click += btn_Usuarios_Click;
             // 
-            // btnParticipantes
+            // label2
             // 
-            btnParticipantes.AutoSize = true;
-            btnParticipantes.Font = new Font("Segoe UI", 18F);
-            btnParticipantes.Location = new Point(542, 210);
-            btnParticipantes.Name = "btnParticipantes";
-            btnParticipantes.Size = new Size(181, 58);
-            btnParticipantes.TabIndex = 3;
-            btnParticipantes.Text = "Participantes";
-            btnParticipantes.UseVisualStyleBackColor = true;
-            btnParticipantes.Click += btnParticipantes_Click;
+            label2.AutoSize = true;
+            label2.BackColor = Color.DimGray;
+            label2.Font = new Font("Segoe UI", 18F);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(16, 13);
+            label2.Name = "label2";
+            label2.Size = new Size(262, 32);
+            label2.TabIndex = 0;
+            label2.Text = "Panel de Administrador";
             // 
-            // btnEventos
+            // pnlOperador
             // 
-            btnEventos.AutoSize = true;
-            btnEventos.Font = new Font("Segoe UI", 18F);
-            btnEventos.Location = new Point(542, 274);
-            btnEventos.Name = "btnEventos";
-            btnEventos.Size = new Size(181, 58);
-            btnEventos.TabIndex = 4;
-            btnEventos.Text = "Eventos";
-            btnEventos.UseVisualStyleBackColor = true;
-            btnEventos.Click += btnEventos_Click;
+            pnlOperador.BackColor = Color.Transparent;
+            pnlOperador.Controls.Add(btnParticipantesOp);
+            pnlOperador.Controls.Add(btnCompetenciasOp);
+            pnlOperador.Controls.Add(label3);
+            pnlOperador.Location = new Point(50, 82);
+            pnlOperador.Name = "pnlOperador";
+            pnlOperador.Size = new Size(673, 314);
+            pnlOperador.TabIndex = 7;
+            pnlOperador.Visible = false;
             // 
-            // btnUsuarios
+            // btnParticipantesOp
             // 
-            btnUsuarios.AutoSize = true;
-            btnUsuarios.Font = new Font("Segoe UI", 18F);
-            btnUsuarios.Location = new Point(542, 338);
-            btnUsuarios.Name = "btnUsuarios";
-            btnUsuarios.Size = new Size(181, 58);
-            btnUsuarios.TabIndex = 5;
-            btnUsuarios.Text = "Usuarios";
-            btnUsuarios.UseVisualStyleBackColor = true;
-            btnUsuarios.Click += button1_Click;
+            btnParticipantesOp.AutoSize = true;
+            btnParticipantesOp.Font = new Font("Segoe UI", 18F);
+            btnParticipantesOp.Location = new Point(31, 162);
+            btnParticipantesOp.Name = "btnParticipantesOp";
+            btnParticipantesOp.Size = new Size(181, 58);
+            btnParticipantesOp.TabIndex = 5;
+            btnParticipantesOp.Text = "Participantes";
+            btnParticipantesOp.UseVisualStyleBackColor = true;
+            btnParticipantesOp.Click += btnParticipantes_Click;
+            // 
+            // btnCompetenciasOp
+            // 
+            btnCompetenciasOp.AutoSize = true;
+            btnCompetenciasOp.Font = new Font("Segoe UI", 18F);
+            btnCompetenciasOp.Location = new Point(31, 98);
+            btnCompetenciasOp.Name = "btnCompetenciasOp";
+            btnCompetenciasOp.Size = new Size(181, 58);
+            btnCompetenciasOp.TabIndex = 4;
+            btnCompetenciasOp.Text = "Competencias";
+            btnCompetenciasOp.UseVisualStyleBackColor = true;
+            btnCompetenciasOp.Click += btnCompetencias_Click;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.BackColor = Color.DimGray;
+            label3.Font = new Font("Segoe UI", 18F);
+            label3.ForeColor = Color.White;
+            label3.Location = new Point(16, 13);
+            label3.Name = "label3";
+            label3.Size = new Size(213, 32);
+            label3.TabIndex = 0;
+            label3.Text = "Panel de Operador";
+            // 
+            // pnlAuditor
+            // 
+            pnlAuditor.BackColor = Color.Transparent;
+            pnlAuditor.Controls.Add(btnUsuariosAud);
+            pnlAuditor.Controls.Add(btnSistemaAud);
+            pnlAuditor.Controls.Add(btnEventosAud);
+            pnlAuditor.Controls.Add(btnParticipantesAud);
+            pnlAuditor.Controls.Add(btnCompetenciasAud);
+            pnlAuditor.Controls.Add(label4);
+            pnlAuditor.Location = new Point(50, 82);
+            pnlAuditor.Name = "pnlAuditor";
+            pnlAuditor.Size = new Size(673, 314);
+            pnlAuditor.TabIndex = 8;
+            pnlAuditor.Visible = false;
+            // 
+            // btnUsuariosAud
+            // 
+            btnUsuariosAud.AutoSize = true;
+            btnUsuariosAud.Font = new Font("Segoe UI", 18F);
+            btnUsuariosAud.Location = new Point(489, 256);
+            btnUsuariosAud.Name = "btnUsuariosAud";
+            btnUsuariosAud.Size = new Size(181, 58);
+            btnUsuariosAud.TabIndex = 10;
+            btnUsuariosAud.Text = "Usuarios";
+            btnUsuariosAud.UseVisualStyleBackColor = true;
+            btnUsuariosAud.Click += btn_Usuarios_Click;
+            // 
+            // btnSistemaAud
+            // 
+            btnSistemaAud.AutoSize = true;
+            btnSistemaAud.Font = new Font("Segoe UI", 18F);
+            btnSistemaAud.Location = new Point(489, 0);
+            btnSistemaAud.Name = "btnSistemaAud";
+            btnSistemaAud.Size = new Size(181, 58);
+            btnSistemaAud.TabIndex = 6;
+            btnSistemaAud.Text = "Sistema";
+            btnSistemaAud.UseVisualStyleBackColor = true;
+            btnSistemaAud.Click += btnSistema_Click;
+            // 
+            // btnEventosAud
+            // 
+            btnEventosAud.AutoSize = true;
+            btnEventosAud.Font = new Font("Segoe UI", 18F);
+            btnEventosAud.Location = new Point(489, 192);
+            btnEventosAud.Name = "btnEventosAud";
+            btnEventosAud.Size = new Size(181, 58);
+            btnEventosAud.TabIndex = 9;
+            btnEventosAud.Text = "Eventos";
+            btnEventosAud.UseVisualStyleBackColor = true;
+            btnEventosAud.Click += btnEventos_Click;
+            // 
+            // btnParticipantesAud
+            // 
+            btnParticipantesAud.AutoSize = true;
+            btnParticipantesAud.Font = new Font("Segoe UI", 18F);
+            btnParticipantesAud.Location = new Point(489, 128);
+            btnParticipantesAud.Name = "btnParticipantesAud";
+            btnParticipantesAud.Size = new Size(181, 58);
+            btnParticipantesAud.TabIndex = 8;
+            btnParticipantesAud.Text = "Participantes";
+            btnParticipantesAud.UseVisualStyleBackColor = true;
+            btnParticipantesAud.Click += btnParticipantes_Click;
+            // 
+            // btnCompetenciasAud
+            // 
+            btnCompetenciasAud.AutoSize = true;
+            btnCompetenciasAud.Font = new Font("Segoe UI", 18F);
+            btnCompetenciasAud.Location = new Point(489, 64);
+            btnCompetenciasAud.Name = "btnCompetenciasAud";
+            btnCompetenciasAud.Size = new Size(181, 58);
+            btnCompetenciasAud.TabIndex = 7;
+            btnCompetenciasAud.Text = "Competencias";
+            btnCompetenciasAud.UseVisualStyleBackColor = true;
+            btnCompetenciasAud.Click += btnCompetencias_Click;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.BackColor = Color.DimGray;
+            label4.Font = new Font("Segoe UI", 18F);
+            label4.ForeColor = Color.White;
+            label4.Location = new Point(16, 13);
+            label4.Name = "label4";
+            label4.Size = new Size(191, 32);
+            label4.TabIndex = 0;
+            label4.Text = "Panel de Auditor";
+            // 
+            // btnCerrarSesion
+            // 
+            btnCerrarSesion.BackColor = Color.DeepSkyBlue;
+            btnCerrarSesion.Location = new Point(683, 0);
+            btnCerrarSesion.Name = "btnCerrarSesion";
+            btnCerrarSesion.Size = new Size(115, 37);
+            btnCerrarSesion.TabIndex = 9;
+            btnCerrarSesion.Text = "Cerrar Sesion";
+            btnCerrarSesion.UseVisualStyleBackColor = false;
+            btnCerrarSesion.Click += btnCerrarSesion_Click;
             // 
             // Principal
             // 
@@ -114,20 +248,25 @@
             BackgroundImage = Properties.Resources.Fondo;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(798, 433);
-            Controls.Add(btnUsuarios);
-            Controls.Add(btnEventos);
-            Controls.Add(btnParticipantes);
-            Controls.Add(btnCompetencias);
-            Controls.Add(btnSistema);
+            ControlBox = false;
+            Controls.Add(btnCerrarSesion);
             Controls.Add(label1);
+            Controls.Add(pnlOperador);
+            Controls.Add(pnlAdmin);
+            Controls.Add(pnlAuditor);
             MaximumSize = new Size(814, 482);
             MinimumSize = new Size(814, 446);
             Name = "Principal";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Principal";
-            Load += Principal_Load;
+            Shown += Principal_Shown;
+            pnlAdmin.ResumeLayout(false);
+            pnlAdmin.PerformLayout();
+            pnlOperador.ResumeLayout(false);
+            pnlOperador.PerformLayout();
+            pnlAuditor.ResumeLayout(false);
+            pnlAuditor.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -138,5 +277,23 @@
         private Button btnParticipantes;
         private Button btnEventos;
         private Button btnUsuarios;
+        private Panel pnlAdmin;
+        private Label label2;
+        private Panel panel1;
+        private Label label3;
+        private Panel pnlAuditor;
+        private Panel pnlOperador;
+        private Button button1;
+        private Button button2;
+        private Label label4;
+        private Button btnParticipantesOp;
+        private Button btnCompetenciasOp;
+        private Button btnUsuariosAud;
+        private Button btnSistemaAud;
+        private Button btnEventosAud;
+        private Button btnParticipantesAud;
+        private Button btnCompetenciasAud;
+        private Button btnUsuariosAdmin;
+        private Button btnCerrarSesion;
     }
 }

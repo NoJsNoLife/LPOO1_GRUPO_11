@@ -22,7 +22,7 @@ namespace ClaseBase
             usuarios.Add(new Usuario(3, "Operador", "operador", "Operador", 3));
 
             //cargar Atletas
-            atletas.Add(new Atleta(1,"42227743","Meneghini","Enzo","Argentino","Zapana",'M',1.90,90,new DateTime(1999,11,21), "mi casa","mail"));
+            //atletas.Add(new Atleta(1,"42227743","Meneghini","Enzo","Argentino","Zapana",'M',1.90,90,new DateTime(1999,11,21), "mi casa","mail"));
 
             //Cargar Categorias
             categorias.Add(new Categoria(1, "H35", "Hombres de 35 a 39 años"));

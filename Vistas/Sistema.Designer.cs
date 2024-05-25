@@ -1,6 +1,6 @@
 ﻿namespace Vistas
 {
-    partial class ABMOperador
+    partial class Sistema
     {
         /// <summary>
         /// Required designer variable.
@@ -40,19 +40,17 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 18F);
-            label1.Location = new Point(143, 107);
-            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Location = new Point(15, 28);
             label1.Name = "label1";
-            label1.Size = new Size(169, 48);
+            label1.Size = new Size(114, 32);
             label1.TabIndex = 0;
             label1.Text = "Opciones";
             // 
             // btnDisciplinas
             // 
-            btnDisciplinas.Location = new Point(21, 294);
-            btnDisciplinas.Margin = new Padding(4, 5, 4, 5);
+            btnDisciplinas.Location = new Point(15, 157);
             btnDisciplinas.Name = "btnDisciplinas";
-            btnDisciplinas.Size = new Size(202, 107);
+            btnDisciplinas.Size = new Size(141, 64);
             btnDisciplinas.TabIndex = 2;
             btnDisciplinas.Text = "Disciplinas";
             btnDisciplinas.UseVisualStyleBackColor = true;
@@ -62,19 +60,18 @@
             // 
             btnVolverSistema.BackgroundImage = Properties.Resources.volver;
             btnVolverSistema.BackgroundImageLayout = ImageLayout.Stretch;
-            btnVolverSistema.Location = new Point(378, 14);
-            btnVolverSistema.Margin = new Padding(4, 5, 4, 5);
+            btnVolverSistema.Location = new Point(255, 12);
             btnVolverSistema.Name = "btnVolverSistema";
-            btnVolverSistema.Size = new Size(69, 80);
+            btnVolverSistema.Size = new Size(48, 48);
             btnVolverSistema.TabIndex = 3;
             btnVolverSistema.UseVisualStyleBackColor = true;
+            btnVolverSistema.Click += btnVolverSistema_Click;
             // 
             // btnListaCategorias
             // 
-            btnListaCategorias.Location = new Point(21, 175);
-            btnListaCategorias.Margin = new Padding(4, 5, 4, 5);
+            btnListaCategorias.Location = new Point(15, 86);
             btnListaCategorias.Name = "btnListaCategorias";
-            btnListaCategorias.Size = new Size(202, 107);
+            btnListaCategorias.Size = new Size(141, 64);
             btnListaCategorias.TabIndex = 4;
             btnListaCategorias.Text = "Categorias";
             btnListaCategorias.UseVisualStyleBackColor = true;
@@ -82,10 +79,9 @@
             // 
             // btnAtletas
             // 
-            btnAtletas.Location = new Point(231, 175);
-            btnAtletas.Margin = new Padding(4, 5, 4, 5);
+            btnAtletas.Location = new Point(162, 86);
             btnAtletas.Name = "btnAtletas";
-            btnAtletas.Size = new Size(202, 107);
+            btnAtletas.Size = new Size(141, 64);
             btnAtletas.TabIndex = 6;
             btnAtletas.Text = "Atletas";
             btnAtletas.UseVisualStyleBackColor = true;
@@ -93,20 +89,19 @@
             // 
             // btnCompetencias
             // 
-            btnCompetencias.Location = new Point(231, 294);
-            btnCompetencias.Margin = new Padding(4, 5, 4, 5);
+            btnCompetencias.Location = new Point(162, 157);
             btnCompetencias.Name = "btnCompetencias";
-            btnCompetencias.Size = new Size(202, 107);
+            btnCompetencias.Size = new Size(141, 64);
             btnCompetencias.TabIndex = 5;
             btnCompetencias.Text = "Competencias";
             btnCompetencias.UseVisualStyleBackColor = true;
             btnCompetencias.Click += btnCompetencias_Click;
             // 
-            // ABMOperador
+            // Sistema
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(460, 463);
+            ClientSize = new Size(326, 288);
             ControlBox = false;
             Controls.Add(btnAtletas);
             Controls.Add(btnCompetencias);
@@ -114,10 +109,9 @@
             Controls.Add(btnVolverSistema);
             Controls.Add(btnDisciplinas);
             Controls.Add(label1);
-            Margin = new Padding(4, 5, 4, 5);
-            MaximumSize = new Size(482, 519);
-            MinimumSize = new Size(482, 519);
-            Name = "ABMOperador";
+            MaximumSize = new Size(342, 327);
+            MinimumSize = new Size(342, 327);
+            Name = "Sistema";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Sistema";
             ResumeLayout(false);
