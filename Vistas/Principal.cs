@@ -16,13 +16,13 @@ namespace Vistas
         public Principal(int rolCodigo, Form referenciaLogin)
         {
             InitializeComponent();
-            referenciaLogin = referenciaLogin;
-            
+            this.referenciaLogin = referenciaLogin;
+
             switch (rolCodigo)
             {
                 case 1:
-                    pnlAdmin.Visible = true;
-                    pnlAdmin.BringToFront();
+                    pnlAdministrador.Visible = true;
+                    pnlAdministrador.BringToFront();
                     break;
                 case 2:
                     pnlOperador.Visible = true;
@@ -38,8 +38,6 @@ namespace Vistas
 
 
             }
-
-            this.referenciaLogin = referenciaLogin;
         }
 
         private void btnSistema_Click(object sender, EventArgs e)
@@ -47,20 +45,6 @@ namespace Vistas
             this.Hide();
             Form sistema = new Sistema(this);
             sistema.Show();
-        }
-
-        private void btnCompetencias_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Form competencias = new Competencias(this);
-            competencias.Show();
-        }
-
-        private void btnParticipantes_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Form participantes = new Atletas(this);
-            participantes.Show();
         }
 
         private void btnEventos_Click(object sender, EventArgs e)
@@ -81,11 +65,6 @@ namespace Vistas
         {
             this.Hide();
             referenciaLogin.Show();
-        }
-
-        private void Principal_Shown(object sender, EventArgs e)
-        {
-
         }
     }
 }

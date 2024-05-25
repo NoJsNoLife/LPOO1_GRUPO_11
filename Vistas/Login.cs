@@ -18,7 +18,7 @@ namespace Vistas
             InitializeComponent();
             this.FormClosed += (s, e) => Application.Exit();
             txtNombre.Text = "Administrador";
-            txtContrasena.Text = "admin";
+            txtContrasena.Text = "administrador";
         }
 
         private void btnIngresar_Click(object sender, EventArgs e)
@@ -27,7 +27,7 @@ namespace Vistas
             Usuario usuario = TrabajarUsuario.loginUsuario(nombre, contrasena);
             if (usuario != null)
             {
-                MessageBox.Show("Bienvenido al sistema", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Bienvenido al sistema "+usuario.Rol_Codigo, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Hide();
                 Form principal = new Principal(usuario.Rol_Codigo,this);
                 principal.Show();

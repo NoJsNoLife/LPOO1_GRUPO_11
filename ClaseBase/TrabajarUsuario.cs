@@ -102,10 +102,10 @@ namespace ClaseBase
                 // Se encontró un usuario, devolver ese usuario
                 DataRow row = dt.Rows[0];
                 Usuario usuario = new Usuario();
-                usuario.Usu_NombreUsuario = row["Usu_NombreUsuario"].ToString();
-                usuario.Usu_Contraseña = row["Usu_Contraseña"].ToString();
-                usuario.Usu_ApellidoNombre = row["Usu_ApellidoNombre"].ToString();
-                usuario.Rol_Codigo = int.Parse(row["Rol_Codigo"].ToString());
+                usuario.Usu_NombreUsuario = row["Usu_NombreUsuario"].ToString()!;
+                usuario.Usu_Contraseña = row["Usu_Contraseña"].ToString()!;
+                usuario.Usu_ApellidoNombre = row["Usu_ApellidoNombre"].ToString()!;
+                usuario.Rol_Codigo = int.Parse(row["Rol_Codigo"].ToString()!);
                 return usuario;
             }
         }

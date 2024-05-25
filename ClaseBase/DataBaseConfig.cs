@@ -8,6 +8,6 @@ namespace ClaseBase
 {
     internal class DataBaseConfig
     {
-        public static String DB_CONN = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\josef\Downloads\comdep.mdf;Integrated Security=True;Connect Timeout=30";
+        public static String DB_CONN = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\Fernando\Facultad\En curso\Laboratorio de Programación Orientada a Objetos\TP2\comdep.mdf;Integrated Security=True;Connect Timeout=30";
     }
 }
