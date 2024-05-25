@@ -40,10 +40,9 @@
             dgwUsuarios = new DataGridView();
             lblNombreUsuarioBuscar = new Label();
             txtNombreUsuarioBuscar = new TextBox();
-            btnNombreUsuarioBuscar = new Button();
             btnBorrar = new Button();
             btnVolverSistema = new Button();
-            button1 = new Button();
+            btnAgregarUsuario = new Button();
             ((System.ComponentModel.ISupportInitialize)dgwUsuarios).BeginInit();
             SuspendLayout();
             // 
@@ -55,7 +54,7 @@
             btnEnviarUsuario.TabIndex = 0;
             btnEnviarUsuario.Text = "Modificar";
             btnEnviarUsuario.UseVisualStyleBackColor = true;
-            btnEnviarUsuario.Click += btnEnviarUsuario_Click;
+            btnEnviarUsuario.Click += btnModificar_Click;
             // 
             // lblNombreUsuario
             // 
@@ -92,9 +91,9 @@
             lblContraseniaUsuario.AutoSize = true;
             lblContraseniaUsuario.Location = new Point(570, 119);
             lblContraseniaUsuario.Name = "lblContraseniaUsuario";
-            lblContraseniaUsuario.Size = new Size(70, 15);
+            lblContraseniaUsuario.Size = new Size(67, 15);
             lblContraseniaUsuario.TabIndex = 6;
-            lblContraseniaUsuario.Text = "Contrasenia";
+            lblContraseniaUsuario.Text = "Contraseña";
             // 
             // lblApellidoNombreUsuario
             // 
@@ -146,18 +145,9 @@
             // 
             txtNombreUsuarioBuscar.Location = new Point(148, 50);
             txtNombreUsuarioBuscar.Name = "txtNombreUsuarioBuscar";
-            txtNombreUsuarioBuscar.Size = new Size(251, 23);
+            txtNombreUsuarioBuscar.Size = new Size(381, 23);
             txtNombreUsuarioBuscar.TabIndex = 12;
-            // 
-            // btnNombreUsuarioBuscar
-            // 
-            btnNombreUsuarioBuscar.Location = new Point(409, 50);
-            btnNombreUsuarioBuscar.Name = "btnNombreUsuarioBuscar";
-            btnNombreUsuarioBuscar.Size = new Size(120, 23);
-            btnNombreUsuarioBuscar.TabIndex = 13;
-            btnNombreUsuarioBuscar.Text = "Buscar";
-            btnNombreUsuarioBuscar.UseVisualStyleBackColor = true;
-            btnNombreUsuarioBuscar.Click += btnNombreUsuarioBuscar_Click;
+            txtNombreUsuarioBuscar.TextChanged += txtNombreUsuarioBuscar_TextChanged;
             // 
             // btnBorrar
             // 
@@ -180,15 +170,15 @@
             btnVolverSistema.UseVisualStyleBackColor = true;
             btnVolverSistema.Click += btnVolverSistema_Click;
             // 
-            // button1
+            // btnAgregarUsuario
             // 
-            button1.Location = new Point(750, 8);
-            button1.Name = "button1";
-            button1.Size = new Size(118, 48);
-            button1.TabIndex = 38;
-            button1.Text = "Agregar Usuario";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            btnAgregarUsuario.Location = new Point(750, 8);
+            btnAgregarUsuario.Name = "btnAgregarUsuario";
+            btnAgregarUsuario.Size = new Size(118, 48);
+            btnAgregarUsuario.TabIndex = 38;
+            btnAgregarUsuario.Text = "Agregar Usuario";
+            btnAgregarUsuario.UseVisualStyleBackColor = true;
+            btnAgregarUsuario.Click += btnAgregarUsuario_Click;
             // 
             // ABMUsuarios
             // 
@@ -196,10 +186,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(931, 450);
             ControlBox = false;
-            Controls.Add(button1);
+            Controls.Add(btnAgregarUsuario);
             Controls.Add(btnVolverSistema);
             Controls.Add(btnBorrar);
-            Controls.Add(btnNombreUsuarioBuscar);
             Controls.Add(txtNombreUsuarioBuscar);
             Controls.Add(lblNombreUsuarioBuscar);
             Controls.Add(dgwUsuarios);
@@ -235,9 +224,8 @@
         private DataGridView dgwUsuarios;
         private Label lblNombreUsuarioBuscar;
         private TextBox txtNombreUsuarioBuscar;
-        private Button btnNombreUsuarioBuscar;
         private Button btnBorrar;
         private Button btnVolverSistema;
-        private Button button1;
+        private Button btnAgregarUsuario;
     }
 }

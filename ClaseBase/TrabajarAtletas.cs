@@ -176,6 +176,24 @@ namespace ClaseBase
             return atleta;
         }
 
+        public static object buscar_atletas(string sPatron)
+        {
+            string conexion = DataBaseConfig.DB_CONN;
+            SqlConnection cnn = new SqlConnection(conexion);
+            SqlCommand cmd = new SqlCommand();
 
+            cmd.CommandText = "SELECT Atl_DNI as 'DNI', Atl_Apellido as 'Apellido', Atl_Nombre as 'Nombre', " +
+                "Atl_Nacionalidad as 'Nacionalidad', Atl_Genero as 'Género' FROM Atleta";
+            cmd.CommandText += " WHERE Atl_DNI LIKE @patron OR Atl_Apellido LIKE @patron OR Atl_Nombre LIKE @patron";
+
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = cnn;
+
+            cmd.Parameters.AddWithValue("@patron", "%" + sPatron + "%");
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            return dt;
+        }
     }
 }

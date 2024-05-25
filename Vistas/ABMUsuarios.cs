@@ -21,16 +21,19 @@ namespace Vistas
             this.referencia = referencia;
         }
 
-        private void btnEnviarUsuario_Click(object sender, EventArgs e)
+        private void btnModificar_Click(object sender, EventArgs e)
         {
 
             if (usuarioId != 0)
             {
                 string nuevoUsuario = txtNombreUsuario.Text;
                 string nuevaContrasenia;
-                if (txtContraseniaUsuario.Text.Equals("")) { 
+                if (txtContraseniaUsuario.Text.Equals(""))
+                {
                     nuevaContrasenia = dgwUsuarios.CurrentRow.Cells["Contrasena"].Value.ToString();
-                }else{
+                }
+                else
+                {
                     nuevaContrasenia = txtContraseniaUsuario.Text;
                 }
                 string nuevoNombreYApellido = txtApellidoNombreUsuario.Text;
@@ -73,24 +76,12 @@ namespace Vistas
             dgwUsuarios.Columns["Contrasena"].Visible = false;
         }
 
-        private void btnNombreUsuarioBuscar_Click(object sender, EventArgs e)
-        {
-            if (txtNombreUsuarioBuscar.Text != "")
-            {
-                dgwUsuarios.DataSource = TrabajarUsuario.buscar_usuarios(txtNombreUsuarioBuscar.Text);
-            }
-            else
-            {
-                load_usuarios();
-            }
-        }
         private void dgwUsuarios_CurrentCellChanged(object sender, EventArgs e)
         {
             if (dgwUsuarios.CurrentRow != null && !Convert.IsDBNull(dgwUsuarios.CurrentRow.Cells["Rol_Codigo"].Value))
-            {   
+            {
                 usuarioId = Convert.ToInt32(dgwUsuarios.CurrentRow.Cells["ID"].Value);
                 txtNombreUsuario.Text = dgwUsuarios.CurrentRow.Cells["Usuario"].Value.ToString();
-                //txtContraseniaUsuario.Text = dgwUsuarios.CurrentRow.Cells["Contrasena"].Value.ToString();
                 txtApellidoNombreUsuario.Text = dgwUsuarios.CurrentRow.Cells["Apellido y Nombre"].Value.ToString();
                 cmbRoles.SelectedIndex = Convert.ToInt32(dgwUsuarios.CurrentRow.Cells["Rol_Codigo"].Value) - 1;
             }
@@ -106,7 +97,8 @@ namespace Vistas
         {
             if (MessageBox.Show("¿Desea eliminar este usuario?", "Eliminar Usuario", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                if(cmbRoles.SelectedIndex+1 == 1){
+                if (cmbRoles.SelectedIndex + 1 == 1)
+                {
                     MessageBox.Show("No se puede eliminar un usuario Administrador", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
@@ -115,11 +107,23 @@ namespace Vistas
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnAgregarUsuario_Click(object sender, EventArgs e)
         {
             this.Hide();
             Form altaUsuarios = new AltaUsuario(this);
             altaUsuarios.Show();
+        }
+
+        private void txtNombreUsuarioBuscar_TextChanged(object sender, EventArgs e)
+        {
+            if (txtNombreUsuarioBuscar.Text != "")
+            {
+                dgwUsuarios.DataSource = TrabajarUsuario.buscar_usuarios(txtNombreUsuarioBuscar.Text);
+            }
+            else
+            {
+                load_usuarios();
+            }
         }
     }
 }

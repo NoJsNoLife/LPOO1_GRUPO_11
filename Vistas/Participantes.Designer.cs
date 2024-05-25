@@ -36,6 +36,8 @@
             btnAltaParticipantes = new Button();
             btnModificar = new Button();
             btnEliminar = new Button();
+            txtDNIAtletaBuscar = new TextBox();
+            lblDNIAtletaBuscar = new Label();
             ((System.ComponentModel.ISupportInitialize)dgwAtletas).BeginInit();
             ((System.ComponentModel.ISupportInitialize)atletaBindingSource).BeginInit();
             SuspendLayout();
@@ -68,10 +70,10 @@
             dgwAtletas.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dgwAtletas.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgwAtletas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgwAtletas.Location = new Point(12, 77);
+            dgwAtletas.Location = new Point(12, 118);
             dgwAtletas.Name = "dgwAtletas";
             dgwAtletas.RowHeadersWidth = 62;
-            dgwAtletas.Size = new Size(776, 322);
+            dgwAtletas.Size = new Size(776, 281);
             dgwAtletas.TabIndex = 6;
             dgwAtletas.SelectionChanged += dgwAtletas_SelectionChanged;
             // 
@@ -120,12 +122,31 @@
             btnEliminar.UseVisualStyleBackColor = false;
             btnEliminar.Click += btnEliminar_Click;
             // 
+            // txtDNIAtletaBuscar
+            // 
+            txtDNIAtletaBuscar.Location = new Point(60, 83);
+            txtDNIAtletaBuscar.Name = "txtDNIAtletaBuscar";
+            txtDNIAtletaBuscar.Size = new Size(728, 23);
+            txtDNIAtletaBuscar.TabIndex = 14;
+            txtDNIAtletaBuscar.TextChanged += txtDNIAtletaBuscar_TextChanged;
+            // 
+            // lblDNIAtletaBuscar
+            // 
+            lblDNIAtletaBuscar.AutoSize = true;
+            lblDNIAtletaBuscar.Location = new Point(12, 86);
+            lblDNIAtletaBuscar.Name = "lblDNIAtletaBuscar";
+            lblDNIAtletaBuscar.Size = new Size(42, 15);
+            lblDNIAtletaBuscar.TabIndex = 13;
+            lblDNIAtletaBuscar.Text = "Buscar";
+            // 
             // Atletas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(796, 426);
             ControlBox = false;
+            Controls.Add(txtDNIAtletaBuscar);
+            Controls.Add(lblDNIAtletaBuscar);
             Controls.Add(btnEliminar);
             Controls.Add(btnModificar);
             Controls.Add(btnAltaParticipantes);
@@ -154,5 +175,7 @@
         private Button btnAltaParticipantes;
         private Button btnModificar;
         private Button btnEliminar;
+        private TextBox txtDNIAtletaBuscar;
+        private Label lblDNIAtletaBuscar;
     }
 }

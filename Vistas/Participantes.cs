@@ -80,5 +80,17 @@ namespace Vistas
             AltaParticipantes altaParticipantes = new AltaParticipantes(this, atletaDni);
             altaParticipantes.Show();
         }
+
+        private void txtDNIAtletaBuscar_TextChanged(object sender, EventArgs e)
+        {
+            if(txtDNIAtletaBuscar.Text != "")
+            {
+                dgwAtletas.DataSource = TrabajarAtletas.buscar_atletas(txtDNIAtletaBuscar.Text);
+            }
+            else
+            {
+                load_atletas();
+            }
+        }
     }
 }

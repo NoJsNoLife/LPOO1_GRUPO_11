@@ -201,6 +201,7 @@ namespace ClaseBase
             SqlCommand cmd = new SqlCommand();
 
             cmd.CommandText = "SELECT ";
+            cmd.CommandText += " Usu_Id as 'ID', ";
             cmd.CommandText += " Rol_Descripcion as 'Rol', ";
             cmd.CommandText += " Usu_ApellidoNombre as 'Apellido y Nombre', ";
             cmd.CommandText += " Usu_NombreUsuario as 'Usuario', Usu_Contraseña as 'Contrasena', ";
