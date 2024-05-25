@@ -66,5 +66,19 @@ namespace Vistas
             this.Hide();
             referenciaLogin.Show();
         }
+
+        private void btnCompetenciasOp_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form competencias = new Competencias(this);
+            competencias.Show();
+        }
+
+        private void btnParticipantesOp_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form atletas = new Atletas(this);
+            atletas.Show();
+        }
     }
 }

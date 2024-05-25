@@ -121,6 +121,7 @@
             btnParticipantesOp.TabIndex = 5;
             btnParticipantesOp.Text = "Participantes";
             btnParticipantesOp.UseVisualStyleBackColor = true;
+            btnParticipantesOp.Click += btnParticipantesOp_Click;
             // 
             // btnCompetenciasOp
             // 
@@ -133,6 +134,7 @@
             btnCompetenciasOp.TabIndex = 4;
             btnCompetenciasOp.Text = "Competencias";
             btnCompetenciasOp.UseVisualStyleBackColor = true;
+            btnCompetenciasOp.Click += btnCompetenciasOp_Click;
             // 
             // label3
             // 
