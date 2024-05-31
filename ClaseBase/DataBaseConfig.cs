@@ -8,6 +8,6 @@ namespace ClaseBase
 {
     internal class DataBaseConfig
     {
-        public static String DB_CONN = LPOO1_GRUPO_11.Properties.Settings.Default.conexion;
+        public static String DB_CONN = ClaseBase.Properties.Resources.DB_CONN;
     }
 }

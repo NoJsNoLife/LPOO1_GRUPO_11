@@ -48,12 +48,14 @@
             // 
             // btnEnviarUsuario
             // 
+            btnEnviarUsuario.BackColor = Color.DodgerBlue;
+            btnEnviarUsuario.ForeColor = SystemColors.ButtonFace;
             btnEnviarUsuario.Location = new Point(570, 323);
             btnEnviarUsuario.Name = "btnEnviarUsuario";
             btnEnviarUsuario.Size = new Size(120, 54);
             btnEnviarUsuario.TabIndex = 0;
             btnEnviarUsuario.Text = "Modificar";
-            btnEnviarUsuario.UseVisualStyleBackColor = true;
+            btnEnviarUsuario.UseVisualStyleBackColor = false;
             btnEnviarUsuario.Click += btnModificar_Click;
             // 
             // lblNombreUsuario
@@ -151,12 +153,14 @@
             // 
             // btnBorrar
             // 
+            btnBorrar.BackColor = Color.Crimson;
+            btnBorrar.ForeColor = SystemColors.ButtonFace;
             btnBorrar.Location = new Point(700, 323);
             btnBorrar.Name = "btnBorrar";
             btnBorrar.Size = new Size(120, 54);
             btnBorrar.TabIndex = 14;
             btnBorrar.Text = "Borrar";
-            btnBorrar.UseVisualStyleBackColor = true;
+            btnBorrar.UseVisualStyleBackColor = false;
             btnBorrar.Click += btnBorrar_Click;
             // 
             // btnVolverSistema
@@ -172,12 +176,14 @@
             // 
             // btnAgregarUsuario
             // 
+            btnAgregarUsuario.BackColor = Color.Green;
+            btnAgregarUsuario.ForeColor = SystemColors.ButtonFace;
             btnAgregarUsuario.Location = new Point(750, 8);
             btnAgregarUsuario.Name = "btnAgregarUsuario";
             btnAgregarUsuario.Size = new Size(118, 48);
             btnAgregarUsuario.TabIndex = 38;
             btnAgregarUsuario.Text = "Agregar Usuario";
-            btnAgregarUsuario.UseVisualStyleBackColor = true;
+            btnAgregarUsuario.UseVisualStyleBackColor = false;
             btnAgregarUsuario.Click += btnAgregarUsuario_Click;
             // 
             // ABMUsuarios

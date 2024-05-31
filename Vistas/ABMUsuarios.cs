@@ -72,6 +72,7 @@ namespace Vistas
         private void load_usuarios()
         {
             dgwUsuarios.DataSource = ClaseBase.TrabajarUsuario.list_usuarios();
+            dgwUsuarios.Columns["ID"].Visible = false;
             dgwUsuarios.Columns["Rol_Codigo"].Visible = false;
             dgwUsuarios.Columns["Contrasena"].Visible = false;
         }
