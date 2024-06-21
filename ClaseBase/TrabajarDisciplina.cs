@@ -14,54 +14,50 @@ namespace ClaseBase
         {
             string conexion = DataBaseConfig.DB_CONN;
             SqlConnection cnn = new SqlConnection(conexion);
+
             SqlCommand cmd = new SqlCommand();
-
-            cmd.CommandText = "SELECT * FROM Atleta WHERE Dis_ID = @id";
-            cmd.CommandType = CommandType.Text;
             cmd.Connection = cnn;
+            cmd.CommandText = "ExisteDisciplinaById";
+            cmd.CommandType = CommandType.StoredProcedure;
 
-            cmd.Parameters.AddWithValue("@id", id);
+            SqlParameter disciplinaId = new SqlParameter("@disciplinaId", SqlDbType.Int);
+            disciplinaId.Value = id;
+            cmd.Parameters.Add(disciplinaId);
 
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            SqlParameter existe = new SqlParameter("@existe", SqlDbType.Bit);
+            existe.Direction = ParameterDirection.Output;
+            cmd.Parameters.Add(existe);
 
-            DataTable dt = new DataTable();
-            da.Fill(dt);
+            cnn.Open();
+            cmd.ExecuteNonQuery();
+            cnn.Close();
 
-            if (dt.Rows.Count == 0)
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
+            return Convert.ToBoolean(existe.Value);
         }
 
         public static bool existeByNombre(string nombre)
         {
             string conexion = DataBaseConfig.DB_CONN;
             SqlConnection cnn = new SqlConnection(conexion);
+
             SqlCommand cmd = new SqlCommand();
-
-            cmd.CommandText = "SELECT * FROM Disciplina WHERE Dis_Nombre = @nombre";
-            cmd.CommandType = CommandType.Text;
             cmd.Connection = cnn;
+            cmd.CommandText = "ExisteDisciplinaByNombre";
+            cmd.CommandType = CommandType.StoredProcedure;
 
-            cmd.Parameters.AddWithValue("@nombre", nombre);
+            SqlParameter disciplinaNombre = new SqlParameter("@nombre", SqlDbType.VarChar, 50);
+            disciplinaNombre.Value = nombre;
+            cmd.Parameters.Add(disciplinaNombre);
 
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            SqlParameter existe = new SqlParameter("@existe", SqlDbType.Bit);
+            existe.Direction = ParameterDirection.Output;
+            cmd.Parameters.Add(existe);
 
-            DataTable dt = new DataTable();
-            da.Fill(dt);
+            cnn.Open();
+            cmd.ExecuteNonQuery();
+            cnn.Close();
 
-            if (dt.Rows.Count == 0)
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
+            return Convert.ToBoolean(existe.Value);
         }
 
         public static bool existeNombreDuplicado(string nombre, int id)
@@ -70,26 +66,27 @@ namespace ClaseBase
             SqlConnection cnn = new SqlConnection(conexion);
             SqlCommand cmd = new SqlCommand();
 
-            cmd.CommandText = "SELECT * FROM Disciplina WHERE Dis_Nombre = @nombre AND Dis_ID != @id";
-            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "ExisteNombreDuplicado";
+            cmd.CommandType = CommandType.StoredProcedure;
             cmd.Connection = cnn;
 
-            cmd.Parameters.AddWithValue("@nombre", nombre);
-            cmd.Parameters.AddWithValue("@id", id);
+            SqlParameter disciplinaNombre = new SqlParameter("@nombre", SqlDbType.VarChar, 50);
+            disciplinaNombre.Value = nombre;
+            cmd.Parameters.Add(disciplinaNombre);
 
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            SqlParameter disciplinaId = new SqlParameter("@id", SqlDbType.Int);
+            disciplinaId.Value = id;
+            cmd.Parameters.Add(disciplinaId);
 
-            DataTable dt = new DataTable();
-            da.Fill(dt);
+            SqlParameter existe = new SqlParameter("@existe", SqlDbType.Bit);
+            existe.Direction = ParameterDirection.Output;
+            cmd.Parameters.Add(existe);
 
-            if (dt.Rows.Count == 0)
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
+            cnn.Open();
+            cmd.ExecuteNonQuery();
+            cnn.Close();
+
+            return Convert.ToBoolean(existe.Value);
         }
 
         public static void alta_disciplina(string nombre, string descripcion)
@@ -98,13 +95,17 @@ namespace ClaseBase
             SqlConnection cnn = new SqlConnection(conexion);
             SqlCommand cmd = new SqlCommand();
 
-            cmd.CommandText = "INSERT INTO Disciplina " +
-                "(Dis_Nombre, Dis_Descripcion) " +
-                "VALUES (@nombre, @descripcion)";
-            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "AltaDisciplina";
+            cmd.CommandType = CommandType.StoredProcedure;
             cmd.Connection = cnn;
-            cmd.Parameters.AddWithValue("@nombre", nombre);
-            cmd.Parameters.AddWithValue("@descripcion", descripcion);
+
+            SqlParameter disciplinaNombre = new SqlParameter("@nombre", SqlDbType.VarChar, 50);
+            disciplinaNombre.Value = nombre;
+            cmd.Parameters.Add(disciplinaNombre);
+
+            SqlParameter disciplinaDescripcion = new SqlParameter("@descripcion", SqlDbType.VarChar, 50);
+            disciplinaDescripcion.Value = descripcion;
+            cmd.Parameters.Add(disciplinaDescripcion);
 
             cnn.Open();
             cmd.ExecuteNonQuery();
@@ -117,10 +118,13 @@ namespace ClaseBase
             SqlConnection cnn = new SqlConnection(conexion);
             SqlCommand cmd = new SqlCommand();
 
-            cmd.CommandText = "DELETE FROM Disciplina WHERE Dis_ID = @id";
-            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "BajaDisciplina";
+            cmd.CommandType = CommandType.StoredProcedure;
             cmd.Connection = cnn;
-            cmd.Parameters.AddWithValue("@id", id);
+
+            SqlParameter disciplinaId = new SqlParameter("@id", SqlDbType.Int);
+            disciplinaId.Value = id;
+            cmd.Parameters.Add(disciplinaId);
 
             cnn.Open();
             cmd.ExecuteNonQuery();
@@ -133,12 +137,21 @@ namespace ClaseBase
             SqlConnection cnn = new SqlConnection(conexion);
             SqlCommand cmd = new SqlCommand();
 
-            cmd.CommandText = "UPDATE Disciplina SET Dis_Nombre = @nombre, Dis_Descripcion = @descripcion WHERE Dis_ID = @id";
-            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "ModificarDisciplina";
+            cmd.CommandType = CommandType.StoredProcedure;
             cmd.Connection = cnn;
-            cmd.Parameters.AddWithValue("@id", id);
-            cmd.Parameters.AddWithValue("@nombre", nombre);
-            cmd.Parameters.AddWithValue("@descripcion", descripcion);
+
+            SqlParameter disciplinaId = new SqlParameter("@id", SqlDbType.Int);
+            disciplinaId.Value = id;
+            cmd.Parameters.Add(disciplinaId);
+
+            SqlParameter disciplinaNombre = new SqlParameter("@nombre", SqlDbType.VarChar, 50);
+            disciplinaNombre.Value = nombre;
+            cmd.Parameters.Add(disciplinaNombre);
+            
+            SqlParameter disciplinaDescripcion = new SqlParameter("@descripcion", SqlDbType.VarChar, 50);
+            disciplinaDescripcion.Value = descripcion;
+            cmd.Parameters.Add(disciplinaDescripcion);
 
             cnn.Open();
             cmd.ExecuteNonQuery();
@@ -151,7 +164,7 @@ namespace ClaseBase
             SqlConnection cnn = new SqlConnection(conexion);
             SqlCommand cmd = new SqlCommand();
 
-            cmd.CommandText = "SELECT Dis_Id as ID, Dis_Nombre as Nombre, Dis_Descripcion as Descripcion FROM Disciplina";
+            cmd.CommandText = "SELECT * FROM ViewDisciplinaFull";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = cnn;
 
