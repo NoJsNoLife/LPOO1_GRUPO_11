@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -83,7 +84,7 @@ namespace Vistas
 
         private void txtDNIAtletaBuscar_TextChanged(object sender, EventArgs e)
         {
-            if(txtDNIAtletaBuscar.Text != "")
+            if (txtDNIAtletaBuscar.Text != "")
             {
                 dgwAtletas.DataSource = TrabajarAtletas.buscar_atletas(txtDNIAtletaBuscar.Text);
             }
@@ -91,6 +92,16 @@ namespace Vistas
             {
                 load_atletas();
             }
+        }
+
+        private void rdbDNI_CheckedChanged(object sender, EventArgs e)
+        {
+            dgwAtletas.DataSource = TrabajarAtletas.ordenar_atletasDNI();
+        }
+
+        private void rdbApellido_CheckedChanged(object sender, EventArgs e)
+        {
+            dgwAtletas.DataSource = TrabajarAtletas.ordenar_atletasApellido();
         }
     }
 }

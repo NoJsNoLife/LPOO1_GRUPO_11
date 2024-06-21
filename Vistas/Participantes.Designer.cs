@@ -38,6 +38,8 @@
             btnEliminar = new Button();
             txtDNIAtletaBuscar = new TextBox();
             lblDNIAtletaBuscar = new Label();
+            rdbDNI = new RadioButton();
+            rdbApellido = new RadioButton();
             ((System.ComponentModel.ISupportInitialize)dgwAtletas).BeginInit();
             ((System.ComponentModel.ISupportInitialize)atletaBindingSource).BeginInit();
             SuspendLayout();
@@ -70,10 +72,10 @@
             dgwAtletas.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dgwAtletas.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgwAtletas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgwAtletas.Location = new Point(12, 118);
+            dgwAtletas.Location = new Point(12, 125);
             dgwAtletas.Name = "dgwAtletas";
             dgwAtletas.RowHeadersWidth = 62;
-            dgwAtletas.Size = new Size(776, 281);
+            dgwAtletas.Size = new Size(776, 299);
             dgwAtletas.TabIndex = 6;
             dgwAtletas.SelectionChanged += dgwAtletas_SelectionChanged;
             // 
@@ -124,7 +126,7 @@
             // 
             // txtDNIAtletaBuscar
             // 
-            txtDNIAtletaBuscar.Location = new Point(60, 83);
+            txtDNIAtletaBuscar.Location = new Point(60, 71);
             txtDNIAtletaBuscar.Name = "txtDNIAtletaBuscar";
             txtDNIAtletaBuscar.Size = new Size(728, 23);
             txtDNIAtletaBuscar.TabIndex = 14;
@@ -133,18 +135,44 @@
             // lblDNIAtletaBuscar
             // 
             lblDNIAtletaBuscar.AutoSize = true;
-            lblDNIAtletaBuscar.Location = new Point(12, 86);
+            lblDNIAtletaBuscar.Location = new Point(12, 74);
             lblDNIAtletaBuscar.Name = "lblDNIAtletaBuscar";
             lblDNIAtletaBuscar.Size = new Size(42, 15);
             lblDNIAtletaBuscar.TabIndex = 13;
             lblDNIAtletaBuscar.Text = "Buscar";
             // 
+            // rdbDNI
+            // 
+            rdbDNI.AutoSize = true;
+            rdbDNI.Location = new Point(16, 100);
+            rdbDNI.Name = "rdbDNI";
+            rdbDNI.Size = new Size(112, 19);
+            rdbDNI.TabIndex = 15;
+            rdbDNI.TabStop = true;
+            rdbDNI.Text = "Ordenar por DNI";
+            rdbDNI.UseVisualStyleBackColor = true;
+            rdbDNI.CheckedChanged += rdbDNI_CheckedChanged;
+            // 
+            // rdbApellido
+            // 
+            rdbApellido.AutoSize = true;
+            rdbApellido.Location = new Point(134, 100);
+            rdbApellido.Name = "rdbApellido";
+            rdbApellido.Size = new Size(136, 19);
+            rdbApellido.TabIndex = 16;
+            rdbApellido.TabStop = true;
+            rdbApellido.Text = "Ordenar por Apellido";
+            rdbApellido.UseVisualStyleBackColor = true;
+            rdbApellido.CheckedChanged += rdbApellido_CheckedChanged;
+            // 
             // Atletas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(796, 426);
+            ClientSize = new Size(796, 436);
             ControlBox = false;
+            Controls.Add(rdbApellido);
+            Controls.Add(rdbDNI);
             Controls.Add(txtDNIAtletaBuscar);
             Controls.Add(lblDNIAtletaBuscar);
             Controls.Add(btnEliminar);
@@ -177,5 +205,7 @@
         private Button btnEliminar;
         private TextBox txtDNIAtletaBuscar;
         private Label lblDNIAtletaBuscar;
+        private RadioButton rdbDNI;
+        private RadioButton rdbApellido;
     }
 }
