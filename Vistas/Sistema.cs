@@ -36,8 +36,8 @@ namespace Vistas
         private void btnListaDisciplinas_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form listaDisciplinas = new ListaDisciplinas(this);
-            listaDisciplinas.Show();
+            Form abmDisciplinas = new ABMDisciplinas(this);
+            abmDisciplinas.Show();
         }
 
         private void btnAtletas_Click(object sender, EventArgs e)
