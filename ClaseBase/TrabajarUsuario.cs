@@ -198,23 +198,15 @@ namespace ClaseBase
         {
             string conexion = DataBaseConfig.DB_CONN;
             SqlConnection cnn = new SqlConnection(conexion);
-            SqlCommand cmd = new SqlCommand();
+            SqlCommand cmd = new SqlCommand("BuscarUsuario", cnn);
+            cmd.CommandType = CommandType.StoredProcedure;
 
-            cmd.CommandText = "SELECT ";
-            cmd.CommandText += " Usu_Id as 'ID', ";
-            cmd.CommandText += " Rol_Descripcion as 'Rol', ";
-            cmd.CommandText += " Usu_ApellidoNombre as 'Apellido y Nombre', ";
-            cmd.CommandText += " Usu_NombreUsuario as 'Usuario', Usu_Contraseña as 'Contrasena', ";
-            cmd.CommandText += " U.Rol_Codigo";
-            cmd.CommandText += " FROM Usuario as U";
-            cmd.CommandText += " LEFT JOIN Roles as R ON (R.Rol_Codigo=U.Rol_Codigo)";
+            SqlParameter param = new SqlParameter("@patron", SqlDbType.VarChar);
+            param.Direction = ParameterDirection.Input;
+            param.Value = "%" + sPatron + "%";
 
-            cmd.CommandText += " WHERE Usu_NombreUsuario LIKE @patron";
+            cmd.Parameters.Add(param);
 
-            cmd.CommandType = CommandType.Text;
-            cmd.Connection = cnn;
-
-            cmd.Parameters.AddWithValue("@patron", "%" + sPatron + "%");
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);

@@ -120,9 +120,7 @@ namespace ClaseBase
             string conexion = DataBaseConfig.DB_CONN;
             SqlConnection cnn = new SqlConnection(conexion);
             SqlCommand cmd = new SqlCommand();
-            //cmd.CommandText = "SELECT * FROM ATLETA";
-            cmd.CommandText = "SELECT Atl_DNI as 'DNI', Atl_Apellido as 'Apellido', Atl_Nombre as 'Nombre', " +
-                "Atl_Nacionalidad as 'Nacionalidad', Atl_Genero as 'Género' FROM Atleta";
+            cmd.CommandText = "SELECT * FROM vw_Atletas";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = cnn;
 
@@ -194,6 +192,30 @@ namespace ClaseBase
             DataTable dt = new DataTable();
             da.Fill(dt);
             return dt;
+        }
+        public static DataTable ordenar_atletasDNI()
+        {
+            string conexion = DataBaseConfig.DB_CONN;
+            SqlConnection cnn = new SqlConnection(conexion);
+            SqlDataAdapter da = new SqlDataAdapter();
+            da.SelectCommand = new SqlCommand();
+            da.SelectCommand.Connection = cnn;
+            da.SelectCommand.CommandText = "OrdenarAtletasPorDNI";
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            return ds.Tables[0];
+        }
+        public static DataTable ordenar_atletasApellido()
+        {
+            string conexion = DataBaseConfig.DB_CONN;
+            SqlConnection cnn = new SqlConnection(conexion);
+            SqlDataAdapter da = new SqlDataAdapter();
+            da.SelectCommand = new SqlCommand();
+            da.SelectCommand.Connection = cnn;
+            da.SelectCommand.CommandText = "OrdenarAtletasPorApellido";
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            return ds.Tables[0];
         }
     }
 }

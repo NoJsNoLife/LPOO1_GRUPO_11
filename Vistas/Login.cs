@@ -17,8 +17,10 @@ namespace Vistas
         {
             InitializeComponent();
             this.FormClosed += (s, e) => Application.Exit();
+
             txtNombre.Text = "Auditor";
             txtContrasena.Text = "auditor";
+
         }
 
         private void btnIngresar_Click(object sender, EventArgs e)
