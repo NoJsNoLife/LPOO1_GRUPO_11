@@ -37,6 +37,8 @@
             btnEditar = new Button();
             btnEliminar = new Button();
             btnAgregarDisciplina = new Button();
+            label3 = new Label();
+            nuevoBtn = new Button();
             ((System.ComponentModel.ISupportInitialize)dgwDisciplinas).BeginInit();
             SuspendLayout();
             // 
@@ -44,7 +46,7 @@
             // 
             dgwDisciplinas.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgwDisciplinas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgwDisciplinas.Location = new Point(12, 12);
+            dgwDisciplinas.Location = new Point(12, 57);
             dgwDisciplinas.Name = "dgwDisciplinas";
             dgwDisciplinas.Size = new Size(490, 237);
             dgwDisciplinas.TabIndex = 0;
@@ -53,7 +55,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(558, 57);
+            label1.Location = new Point(522, 57);
             label1.Name = "label1";
             label1.Size = new Size(51, 15);
             label1.TabIndex = 1;
@@ -61,15 +63,16 @@
             // 
             // txtNombreDis
             // 
-            txtNombreDis.Location = new Point(558, 75);
+            txtNombreDis.Font = new Font("Segoe UI", 18F);
+            txtNombreDis.Location = new Point(522, 75);
             txtNombreDis.Name = "txtNombreDis";
-            txtNombreDis.Size = new Size(283, 23);
+            txtNombreDis.Size = new Size(283, 39);
             txtNombreDis.TabIndex = 2;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(558, 124);
+            label2.Location = new Point(522, 124);
             label2.Name = "label2";
             label2.Size = new Size(69, 15);
             label2.TabIndex = 3;
@@ -77,16 +80,17 @@
             // 
             // txtDescripcionDis
             // 
-            txtDescripcionDis.Location = new Point(558, 142);
+            txtDescripcionDis.Font = new Font("Segoe UI", 18F);
+            txtDescripcionDis.Location = new Point(522, 142);
             txtDescripcionDis.Name = "txtDescripcionDis";
-            txtDescripcionDis.Size = new Size(283, 23);
+            txtDescripcionDis.Size = new Size(283, 39);
             txtDescripcionDis.TabIndex = 4;
             // 
             // btnVolverSistema
             // 
             btnVolverSistema.BackgroundImage = Properties.Resources.volver;
             btnVolverSistema.BackgroundImageLayout = ImageLayout.Stretch;
-            btnVolverSistema.Location = new Point(847, 12);
+            btnVolverSistema.Location = new Point(758, 15);
             btnVolverSistema.Name = "btnVolverSistema";
             btnVolverSistema.Size = new Size(48, 48);
             btnVolverSistema.TabIndex = 38;
@@ -97,9 +101,9 @@
             // 
             btnEditar.BackColor = SystemColors.MenuHighlight;
             btnEditar.ForeColor = SystemColors.ButtonHighlight;
-            btnEditar.Location = new Point(558, 203);
+            btnEditar.Location = new Point(615, 248);
             btnEditar.Name = "btnEditar";
-            btnEditar.Size = new Size(130, 46);
+            btnEditar.Size = new Size(91, 46);
             btnEditar.TabIndex = 39;
             btnEditar.Text = "Editar";
             btnEditar.UseVisualStyleBackColor = false;
@@ -109,9 +113,9 @@
             // 
             btnEliminar.BackColor = Color.Brown;
             btnEliminar.ForeColor = SystemColors.ButtonHighlight;
-            btnEliminar.Location = new Point(720, 203);
+            btnEliminar.Location = new Point(714, 248);
             btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(121, 46);
+            btnEliminar.Size = new Size(91, 46);
             btnEliminar.TabIndex = 40;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = false;
@@ -121,19 +125,43 @@
             // 
             btnAgregarDisciplina.BackColor = Color.ForestGreen;
             btnAgregarDisciplina.ForeColor = SystemColors.HighlightText;
-            btnAgregarDisciplina.Location = new Point(750, 12);
+            btnAgregarDisciplina.Location = new Point(522, 248);
             btnAgregarDisciplina.Name = "btnAgregarDisciplina";
-            btnAgregarDisciplina.Size = new Size(91, 48);
+            btnAgregarDisciplina.Size = new Size(87, 46);
             btnAgregarDisciplina.TabIndex = 41;
             btnAgregarDisciplina.Text = "Agregar";
             btnAgregarDisciplina.UseVisualStyleBackColor = false;
             btnAgregarDisciplina.Click += btnAgregarDisciplina_Click;
             // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 18F);
+            label3.Location = new Point(12, 22);
+            label3.Name = "label3";
+            label3.Size = new Size(126, 32);
+            label3.TabIndex = 42;
+            label3.Text = "Disciplinas";
+            // 
+            // nuevoBtn
+            // 
+            nuevoBtn.BackColor = Color.ForestGreen;
+            nuevoBtn.ForeColor = SystemColors.HighlightText;
+            nuevoBtn.Location = new Point(665, 15);
+            nuevoBtn.Name = "nuevoBtn";
+            nuevoBtn.Size = new Size(87, 46);
+            nuevoBtn.TabIndex = 43;
+            nuevoBtn.Text = "Nuevo";
+            nuevoBtn.UseVisualStyleBackColor = false;
+            nuevoBtn.Click += nuevoBtn_Click;
+            // 
             // ABMDisciplinas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(907, 450);
+            ClientSize = new Size(818, 318);
+            Controls.Add(nuevoBtn);
+            Controls.Add(label3);
             Controls.Add(btnAgregarDisciplina);
             Controls.Add(btnEliminar);
             Controls.Add(btnEditar);
@@ -161,5 +189,7 @@
         private Button btnEditar;
         private Button btnEliminar;
         private Button btnAgregarDisciplina;
+        private Label label3;
+        private Button nuevoBtn;
     }
 }

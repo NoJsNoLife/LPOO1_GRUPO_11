@@ -35,9 +35,27 @@ namespace Vistas
 
         private void btnAgregarDisciplina_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Form altaDisciplina = new AltaDisciplina(this);
-            altaDisciplina.Show();
+            if (disciplinaId == 0)
+            {
+                string nombre = txtNombreDis.Text;
+                string descripcion = txtDescripcionDis.Text;
+                if (TrabajarDisciplina.existeNombreDuplicado(nombre, 0))
+                {
+                    MessageBox.Show("Esa disciplina ya existe");
+                    return;
+                }
+                else
+                {   
+                    MessageBox.Show("Desa agregar la disciplina: " + nombre + " con la descripción: " + descripcion + "?", "Agregar disciplina", MessageBoxButtons.OKCancel);
+                    TrabajarDisciplina.alta_disciplina(nombre, descripcion);
+                    load_disciplinas();
+                    MessageBox.Show("Disciplina agregada con éxito");
+                }
+            }
+            else
+            {
+                MessageBox.Show("No se puede agregar una disciplina existente");
+            }
         }
 
         private void ABMDisciplinas_Load(object sender, EventArgs e)
@@ -105,6 +123,11 @@ namespace Vistas
                 txtNombreDis.Text = dgwDisciplinas.CurrentRow.Cells["Nombre"].Value.ToString();
                 txtDescripcionDis.Text = dgwDisciplinas.CurrentRow.Cells["Descripcion"].Value.ToString();
             }
+        }
+
+        private void nuevoBtn_Click(object sender, EventArgs e)
+        {
+            limpiarVariables();
         }
     }
 }
