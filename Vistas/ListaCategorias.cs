@@ -75,7 +75,7 @@ namespace Vistas
                 if (result == DialogResult.Yes) {
                     
                         TrabajarCategoria.EditarCategoria(categoriaId, txtNombre.Text, txtDescripcion.Text);
-                        MessageBox.Show("Categoria borrada con exito.");
+                        MessageBox.Show("Categoria eliminada con exito.");
                     
                     
                     
