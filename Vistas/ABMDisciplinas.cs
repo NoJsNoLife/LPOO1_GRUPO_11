@@ -45,8 +45,12 @@ namespace Vistas
                     return;
                 }
                 else
-                {   
-                    MessageBox.Show("Desa agregar la disciplina: " + nombre + " con la descripción: " + descripcion + "?", "Agregar disciplina", MessageBoxButtons.OKCancel);
+                {
+                    var resultado = MessageBox.Show("Desa agregar la disciplina: " + nombre + " con la descripción: " + descripcion + "?", "Agregar disciplina", MessageBoxButtons.OKCancel);
+                    if (resultado == DialogResult.Cancel)
+                    {
+                        return;
+                    }
                     TrabajarDisciplina.alta_disciplina(nombre, descripcion);
                     load_disciplinas();
                     MessageBox.Show("Disciplina agregada con éxito");
@@ -100,9 +104,18 @@ namespace Vistas
                 DialogResult dialogResult = MessageBox.Show("¿Está seguro que desea eliminar la disciplina?", "Eliminar disciplina", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    TrabajarDisciplina.baja_disciplina(disciplinaId);
-                    load_disciplinas();
-                    MessageBox.Show("Disciplina eliminada con éxito");
+                    try
+                    {
+                        TrabajarDisciplina.baja_disciplina(disciplinaId);
+                        load_disciplinas();
+                        MessageBox.Show("Disciplina eliminada con éxito");
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("La Disciplina no puede ser eliminada por que esta en uso.");
+                    }
+                    
+                    
                     limpiarVariables();
                 }
             }

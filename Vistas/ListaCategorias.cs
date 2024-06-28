@@ -71,8 +71,16 @@ namespace Vistas
             }
             else
             {
-                MessageBox.Show("¿Desea modificar esta categoría?", "Modificar Categoría", MessageBoxButtons.YesNo);
-                TrabajarCategoria.EditarCategoria(categoriaId, txtNombre.Text, txtDescripcion.Text);
+                var result = MessageBox.Show("¿Desea modificar esta categoría?", "Modificar Categoría", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes) {
+                    
+                        TrabajarCategoria.EditarCategoria(categoriaId, txtNombre.Text, txtDescripcion.Text);
+                        MessageBox.Show("Categoria borrada con exito.");
+                    
+                    
+                    
+                }
+                
                 cargarCategorias();
             }
 
@@ -87,8 +95,19 @@ namespace Vistas
             }
             else
             {
-                MessageBox.Show("¿Desea eliminar esta categoría?", "Eliminar Categoría", MessageBoxButtons.YesNo);
-                TrabajarCategoria.BajaCategoria(categoriaId);
+                var result = MessageBox.Show("¿Desea eliminar esta categoría?", "Eliminar Categoría", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    try
+                    {
+                        TrabajarCategoria.BajaCategoria(categoriaId);
+                        MessageBox.Show("Categoria borrada con exito.");
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("La Categoria no puede ser eliminada por que esta en uso.");
+                    }
+                }
                 cargarCategorias();
             }
         }
@@ -103,8 +122,11 @@ namespace Vistas
             }
             else
             {
-                MessageBox.Show("¿Desea agregar esta categoría?", "Agregar Categoría", MessageBoxButtons.YesNo);
-                TrabajarCategoria.AltaCategoria(txtNombre.Text, txtDescripcion.Text);
+                var result = MessageBox.Show("¿Desea agregar esta categoría?", "Agregar Categoría", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes ) {
+                    TrabajarCategoria.AltaCategoria(txtNombre.Text, txtDescripcion.Text);
+                }
+                
                 cargarCategorias();
             }
         }

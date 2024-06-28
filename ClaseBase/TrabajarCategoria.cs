@@ -30,12 +30,21 @@ namespace ClaseBase
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                SqlCommand cmd = new SqlCommand("BajaCategoria", conn);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@Cat_ID", catId);
-
-                conn.Open();
-                cmd.ExecuteNonQuery();
+                try
+                {
+                    SqlCommand cmd = new SqlCommand("BajaCategoria", conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@Cat_ID", catId);
+                 
+                    conn.Open();
+                
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception e)
+                {
+                    throw new Exception("Error al eliminar la categoria",e);
+                }
+                
             }
         }
 

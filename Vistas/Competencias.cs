@@ -34,7 +34,7 @@ namespace Vistas
 
         private void cargarCompetencias()
         {
-            dgwCompetencias.DataSource = null;
+            
             dgwCompetencias.DataSource = TrabajarCompetencia.listarCompetencias();
             dgwCompetencias.Columns["ID"].Visible = false;
             dgwCompetencias.Columns["Cat_ID"].Visible = false;
@@ -60,11 +60,21 @@ namespace Vistas
         }
 
         private void btnBorrar_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("¿Está seguro que desea borrar la competencia?", "Eliminar Competencia", MessageBoxButtons.YesNoCancel);
-            TrabajarCompetencia.EliminarCompetencia(competenciaId);
+        {   
+            if (competenciaId == 0)
+            {
+                MessageBox.Show("Debe seleccionar una competencia para borrar");
+                return;
+            }
+            var result = MessageBox.Show("¿Está seguro que desea borrar la competencia?", "Eliminar Competencia", MessageBoxButtons.YesNoCancel);
+            if ( result == DialogResult.Yes)
+            {   
+                TrabajarCompetencia.EliminarCompetencia(competenciaId);
+                MessageBox.Show("Competencia eliminada con éxito");
+            }
+            
             cargarCompetencias();
-            MessageBox.Show("Competencia eliminada con éxito");
+            
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
@@ -78,7 +88,10 @@ namespace Vistas
 
         private void Competencias_VisibleChanged(object sender, EventArgs e)
         {
-            cargarCompetencias();
+            if (this.Visible)
+            {
+                cargarCompetencias();
+            }
         }
     }
 }

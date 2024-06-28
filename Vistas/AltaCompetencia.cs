@@ -59,9 +59,9 @@ namespace Vistas
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            if (dtpInicio.Value >= dtpFin.Value)
+            if (dtpInicio.Value.Date > dtpFin.Value.Date)
             {
-                MessageBox.Show("La fecha de inicio debe ser mayor a la de fin.");
+                MessageBox.Show("La fecha de inicio debe ser menor a la de fin.");
                 return;
             }
             else
@@ -91,9 +91,18 @@ namespace Vistas
         {
             MessageBox.Show("¿Desea modificar esta competencia?", "Modificar Competencia", MessageBoxButtons.YesNo);
             try
-            {
-                TrabajarCompetencia.ActualizarCompetencia(competenciaId, txtNombre.Text, txtDescripcion.Text, dtpInicio.Value, dtpFin.Value, cmbEstado.Text, txtOrganizador.Text, txtUbicacion.Text, txtSponsor.Text, (int)cmbCategoria.SelectedValue, (int)cmbDisciplina.SelectedValue);
-
+            {   
+                
+                if (dtpInicio.Value.Date > dtpFin.Value.Date)
+                {
+                    MessageBox.Show("La fecha de inicio debe ser menor a la de fin.");
+                    return;
+                }
+                else
+                {
+                    TrabajarCompetencia.ActualizarCompetencia(competenciaId, txtNombre.Text, txtDescripcion.Text, dtpInicio.Value, dtpFin.Value, cmbEstado.Text, txtOrganizador.Text, txtUbicacion.Text, txtSponsor.Text, (int)cmbCategoria.SelectedValue, (int)cmbDisciplina.SelectedValue);
+                }
+                
             }catch (Exception ex)
             {
                 MessageBox.Show("Error al modificar la competencia: " + ex.Message);

@@ -51,7 +51,7 @@
             // dgwCompetencias
             // 
             dgwCompetencias.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgwCompetencias.Location = new Point(12, 63);
+            dgwCompetencias.Location = new Point(12, 88);
             dgwCompetencias.Name = "dgwCompetencias";
             dgwCompetencias.Size = new Size(826, 404);
             dgwCompetencias.TabIndex = 5;
@@ -71,9 +71,9 @@
             // 
             btnAgregar.BackColor = Color.Green;
             btnAgregar.ForeColor = SystemColors.ButtonFace;
-            btnAgregar.Location = new Point(450, 474);
+            btnAgregar.Location = new Point(396, 8);
             btnAgregar.Name = "btnAgregar";
-            btnAgregar.Size = new Size(136, 54);
+            btnAgregar.Size = new Size(136, 48);
             btnAgregar.TabIndex = 41;
             btnAgregar.Text = "Agregar Competencia";
             btnAgregar.UseVisualStyleBackColor = false;
@@ -83,9 +83,9 @@
             // 
             btnBorrar.BackColor = Color.Crimson;
             btnBorrar.ForeColor = SystemColors.ButtonFace;
-            btnBorrar.Location = new Point(718, 473);
+            btnBorrar.Location = new Point(664, 8);
             btnBorrar.Name = "btnBorrar";
-            btnBorrar.Size = new Size(120, 54);
+            btnBorrar.Size = new Size(120, 48);
             btnBorrar.TabIndex = 40;
             btnBorrar.Text = "Eliminar";
             btnBorrar.UseVisualStyleBackColor = false;
@@ -95,9 +95,9 @@
             // 
             btnModificar.BackColor = Color.DodgerBlue;
             btnModificar.ForeColor = SystemColors.ButtonFace;
-            btnModificar.Location = new Point(592, 474);
+            btnModificar.Location = new Point(538, 8);
             btnModificar.Name = "btnModificar";
-            btnModificar.Size = new Size(120, 54);
+            btnModificar.Size = new Size(120, 48);
             btnModificar.TabIndex = 39;
             btnModificar.Text = "Modificar";
             btnModificar.UseVisualStyleBackColor = false;
@@ -107,7 +107,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(850, 540);
+            ClientSize = new Size(850, 508);
             ControlBox = false;
             Controls.Add(btnAgregar);
             Controls.Add(btnBorrar);
@@ -115,7 +115,8 @@
             Controls.Add(label1);
             Controls.Add(dgwCompetencias);
             Controls.Add(btnVolverSistema);
-            MinimumSize = new Size(580, 424);
+            MaximumSize = new Size(866, 547);
+            MinimumSize = new Size(866, 547);
             Name = "Competencias";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Competencias";
@@ -134,5 +135,6 @@
         private Button btnAgregar;
         private Button btnBorrar;
         private Button btnModificar;
+        private Label lblId;
     }
 }

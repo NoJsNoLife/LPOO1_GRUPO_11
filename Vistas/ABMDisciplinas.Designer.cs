@@ -105,7 +105,7 @@
             btnEditar.Name = "btnEditar";
             btnEditar.Size = new Size(91, 46);
             btnEditar.TabIndex = 39;
-            btnEditar.Text = "Editar";
+            btnEditar.Text = "Modificar";
             btnEditar.UseVisualStyleBackColor = false;
             btnEditar.Click += btnEditar_Click;
             // 
@@ -160,6 +160,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(818, 318);
+            ControlBox = false;
             Controls.Add(nuevoBtn);
             Controls.Add(label3);
             Controls.Add(btnAgregarDisciplina);
@@ -172,6 +173,7 @@
             Controls.Add(label1);
             Controls.Add(dgwDisciplinas);
             Name = "ABMDisciplinas";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "ABMDisciplinas";
             Load += ABMDisciplinas_Load;
             ((System.ComponentModel.ISupportInitialize)dgwDisciplinas).EndInit();
