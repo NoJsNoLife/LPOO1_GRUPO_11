@@ -1,6 +1,6 @@
 ﻿namespace Vistas
 {
-    partial class Participantes
+    partial class Atletas
     {
         /// <summary>
         /// Required designer variable.
@@ -31,10 +31,16 @@
             components = new System.ComponentModel.Container();
             btnVolverSistema = new Button();
             label1 = new Label();
-            dataGridView1 = new DataGridView();
+            dgwAtletas = new DataGridView();
             atletaBindingSource = new BindingSource(components);
             btnAltaParticipantes = new Button();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            btnModificar = new Button();
+            btnEliminar = new Button();
+            txtDNIAtletaBuscar = new TextBox();
+            lblDNIAtletaBuscar = new Label();
+            rdbDNI = new RadioButton();
+            rdbApellido = new RadioButton();
+            ((System.ComponentModel.ISupportInitialize)dgwAtletas).BeginInit();
             ((System.ComponentModel.ISupportInitialize)atletaBindingSource).BeginInit();
             SuspendLayout();
             // 
@@ -42,10 +48,9 @@
             // 
             btnVolverSistema.BackgroundImage = Properties.Resources.volver;
             btnVolverSistema.BackgroundImageLayout = ImageLayout.Stretch;
-            btnVolverSistema.Location = new Point(1057, 20);
-            btnVolverSistema.Margin = new Padding(4, 5, 4, 5);
+            btnVolverSistema.Location = new Point(740, 12);
             btnVolverSistema.Name = "btnVolverSistema";
-            btnVolverSistema.Size = new Size(69, 80);
+            btnVolverSistema.Size = new Size(48, 48);
             btnVolverSistema.TabIndex = 4;
             btnVolverSistema.UseVisualStyleBackColor = true;
             btnVolverSistema.Click += btnVolverSistema_Click;
@@ -54,26 +59,25 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 20F);
-            label1.Location = new Point(17, 38);
-            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Location = new Point(12, 23);
             label1.Name = "label1";
-            label1.Size = new Size(249, 54);
+            label1.Size = new Size(98, 37);
             label1.TabIndex = 5;
-            label1.Text = "Participantes";
+            label1.Text = "Atletas";
             // 
-            // dataGridView1
+            // dgwAtletas
             // 
-            dataGridView1.AllowUserToAddRows = false;
-            dataGridView1.AllowUserToResizeColumns = false;
-            dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(17, 128);
-            dataGridView1.Margin = new Padding(4, 5, 4, 5);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(1109, 537);
-            dataGridView1.TabIndex = 6;
+            dgwAtletas.AllowUserToAddRows = false;
+            dgwAtletas.AllowUserToResizeColumns = false;
+            dgwAtletas.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dgwAtletas.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgwAtletas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgwAtletas.Location = new Point(12, 125);
+            dgwAtletas.Name = "dgwAtletas";
+            dgwAtletas.RowHeadersWidth = 62;
+            dgwAtletas.Size = new Size(776, 299);
+            dgwAtletas.TabIndex = 6;
+            dgwAtletas.SelectionChanged += dgwAtletas_SelectionChanged;
             // 
             // atletaBindingSource
             // 
@@ -81,33 +85,110 @@
             // 
             // btnAltaParticipantes
             // 
-            btnAltaParticipantes.BackColor = SystemColors.ActiveCaption;
+            btnAltaParticipantes.BackColor = Color.Green;
             btnAltaParticipantes.Font = new Font("Segoe UI", 12F);
-            btnAltaParticipantes.Location = new Point(797, 20);
-            btnAltaParticipantes.Margin = new Padding(4, 5, 4, 5);
+            btnAltaParticipantes.ForeColor = SystemColors.ButtonFace;
+            btnAltaParticipantes.Location = new Point(194, 12);
             btnAltaParticipantes.Name = "btnAltaParticipantes";
-            btnAltaParticipantes.Size = new Size(251, 80);
+            btnAltaParticipantes.Size = new Size(176, 48);
             btnAltaParticipantes.TabIndex = 7;
-            btnAltaParticipantes.Text = "Alta de Participantes";
+            btnAltaParticipantes.Text = "Registrar Atleta";
             btnAltaParticipantes.UseVisualStyleBackColor = false;
             btnAltaParticipantes.Click += btnAltaParticipantes_Click;
             // 
-            // Participantes
+            // btnModificar
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            btnModificar.BackColor = Color.DodgerBlue;
+            btnModificar.Enabled = false;
+            btnModificar.Font = new Font("Segoe UI", 12F);
+            btnModificar.ForeColor = SystemColors.ButtonFace;
+            btnModificar.Location = new Point(376, 12);
+            btnModificar.Name = "btnModificar";
+            btnModificar.Size = new Size(176, 48);
+            btnModificar.TabIndex = 8;
+            btnModificar.Text = "Modificar Atleta";
+            btnModificar.UseVisualStyleBackColor = false;
+            btnModificar.Click += btnModificar_Click;
+            // 
+            // btnEliminar
+            // 
+            btnEliminar.BackColor = Color.Crimson;
+            btnEliminar.Enabled = false;
+            btnEliminar.Font = new Font("Segoe UI", 12F);
+            btnEliminar.ForeColor = SystemColors.ButtonFace;
+            btnEliminar.Location = new Point(558, 12);
+            btnEliminar.Name = "btnEliminar";
+            btnEliminar.Size = new Size(176, 48);
+            btnEliminar.TabIndex = 9;
+            btnEliminar.Text = "Eliminar Atleta";
+            btnEliminar.UseVisualStyleBackColor = false;
+            btnEliminar.Click += btnEliminar_Click;
+            // 
+            // txtDNIAtletaBuscar
+            // 
+            txtDNIAtletaBuscar.Location = new Point(60, 71);
+            txtDNIAtletaBuscar.Name = "txtDNIAtletaBuscar";
+            txtDNIAtletaBuscar.Size = new Size(728, 23);
+            txtDNIAtletaBuscar.TabIndex = 14;
+            txtDNIAtletaBuscar.TextChanged += txtDNIAtletaBuscar_TextChanged;
+            // 
+            // lblDNIAtletaBuscar
+            // 
+            lblDNIAtletaBuscar.AutoSize = true;
+            lblDNIAtletaBuscar.Location = new Point(12, 74);
+            lblDNIAtletaBuscar.Name = "lblDNIAtletaBuscar";
+            lblDNIAtletaBuscar.Size = new Size(42, 15);
+            lblDNIAtletaBuscar.TabIndex = 13;
+            lblDNIAtletaBuscar.Text = "Buscar";
+            // 
+            // rdbDNI
+            // 
+            rdbDNI.AutoSize = true;
+            rdbDNI.Location = new Point(16, 100);
+            rdbDNI.Name = "rdbDNI";
+            rdbDNI.Size = new Size(112, 19);
+            rdbDNI.TabIndex = 15;
+            rdbDNI.TabStop = true;
+            rdbDNI.Text = "Ordenar por DNI";
+            rdbDNI.UseVisualStyleBackColor = true;
+            rdbDNI.CheckedChanged += rdbDNI_CheckedChanged;
+            // 
+            // rdbApellido
+            // 
+            rdbApellido.AutoSize = true;
+            rdbApellido.Location = new Point(134, 100);
+            rdbApellido.Name = "rdbApellido";
+            rdbApellido.Size = new Size(136, 19);
+            rdbApellido.TabIndex = 16;
+            rdbApellido.TabStop = true;
+            rdbApellido.Text = "Ordenar por Apellido";
+            rdbApellido.UseVisualStyleBackColor = true;
+            rdbApellido.CheckedChanged += rdbApellido_CheckedChanged;
+            // 
+            // Atletas
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1134, 722);
+            ClientSize = new Size(796, 436);
             ControlBox = false;
+            Controls.Add(rdbApellido);
+            Controls.Add(rdbDNI);
+            Controls.Add(txtDNIAtletaBuscar);
+            Controls.Add(lblDNIAtletaBuscar);
+            Controls.Add(btnEliminar);
+            Controls.Add(btnModificar);
             Controls.Add(btnAltaParticipantes);
-            Controls.Add(dataGridView1);
+            Controls.Add(dgwAtletas);
             Controls.Add(label1);
             Controls.Add(btnVolverSistema);
-            Margin = new Padding(4, 5, 4, 5);
-            MaximumSize = new Size(1156, 778);
-            MinimumSize = new Size(1156, 778);
-            Name = "Participantes";
-            Text = "Participantes";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            MaximumSize = new Size(812, 475);
+            MinimumSize = new Size(812, 439);
+            Name = "Atletas";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Atletas";
+            Load += Atletas_Load;
+            VisibleChanged += Atletas_VisibleChanged;
+            ((System.ComponentModel.ISupportInitialize)dgwAtletas).EndInit();
             ((System.ComponentModel.ISupportInitialize)atletaBindingSource).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -117,8 +198,14 @@
 
         private Button btnVolverSistema;
         private Label label1;
-        private DataGridView dataGridView1;
+        private DataGridView dgwAtletas;
         private BindingSource atletaBindingSource;
         private Button btnAltaParticipantes;
+        private Button btnModificar;
+        private Button btnEliminar;
+        private TextBox txtDNIAtletaBuscar;
+        private Label lblDNIAtletaBuscar;
+        private RadioButton rdbDNI;
+        private RadioButton rdbApellido;
     }
 }

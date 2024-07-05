@@ -12,9 +12,32 @@ namespace Vistas
 {
     public partial class Principal : Form
     {
-        public Principal()
+        private Form referenciaLogin;
+        public Principal(int rolCodigo, Form referenciaLogin)
         {
             InitializeComponent();
+            this.referenciaLogin = referenciaLogin;
+
+            switch (rolCodigo)
+            {
+                case 1:
+                    pnlAdministrador.Visible = true;
+                    pnlAdministrador.BringToFront();
+                    break;
+                case 2:
+                    pnlOperador.Visible = true;
+                    pnlOperador.BringToFront();
+                    break;
+                case 3:
+                    pnlAuditor.Visible = true;
+                    pnlAuditor.BringToFront();
+                    break;
+                default:
+                    MessageBox.Show("Rol no válido");
+                    break;
+
+
+            }
         }
 
         private void btnSistema_Click(object sender, EventArgs e)
@@ -24,25 +47,38 @@ namespace Vistas
             sistema.Show();
         }
 
-        private void btnCompetencias_Click(object sender, EventArgs e)
+        private void btnEventos_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form eventos = new Eventos(this);
+            eventos.Show();
+        }
+
+        private void btn_Usuarios_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form usuarios = new ABMUsuarios(this);
+            usuarios.Show();
+        }
+
+        private void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            referenciaLogin.Show();
+        }
+
+        private void btnCompetenciasOp_Click(object sender, EventArgs e)
         {
             this.Hide();
             Form competencias = new Competencias(this);
             competencias.Show();
         }
 
-        private void btnParticipantes_Click(object sender, EventArgs e)
+        private void btnParticipantesOp_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form participantes = new Participantes(this);
-            participantes.Show();
-        }
-
-        private void btnEventos_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Form eventos = new Eventos(this);
-            eventos.Show();
+            Form atletas = new Atletas(this);
+            atletas.Show();
         }
     }
 }

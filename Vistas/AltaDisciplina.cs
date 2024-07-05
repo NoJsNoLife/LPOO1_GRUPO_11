@@ -22,9 +22,7 @@ namespace Vistas
 
         private void btnVolverSistema_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            sistemaReferencia.Close();
-            this.sistemaReferencia = new Sistema(this);
+            this.Close();
             sistemaReferencia.Show();
         }
 
@@ -35,8 +33,20 @@ namespace Vistas
             {
                 return;
             }
-            Disciplina disciplina = new Disciplina(DatosGlobales.disciplinas.Count(), txtNombre.Text, txtDescripcion.Text);
-            DatosGlobales.disciplinas.Add(disciplina);
+            
+            if (TrabajarDisciplina.existeByNombre(txtNombre.Text))
+            {
+                MessageBox.Show("La disciplina ya existe");
+                return;
+            }
+            else
+            {
+                TrabajarDisciplina.alta_disciplina(txtNombre.Text, txtDescripcion.Text);
+                MessageBox.Show("Disciplina creada con éxito");
+                this.Close();
+                sistemaReferencia.Show();
+            }
+
         }
     }
 }

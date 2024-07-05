@@ -29,7 +29,7 @@ namespace Vistas
 
         private void btnVolverSistema_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
             sistemaReferencia.Show();
         }
 
@@ -38,6 +38,11 @@ namespace Vistas
             this.Hide();
             Form altaDisciplina = new AltaDisciplina(this);
             altaDisciplina.Show();
+        }
+
+        private void ListaDisciplinas_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -29,45 +29,100 @@
         private void InitializeComponent()
         {
             btnVolverSistema = new Button();
+            dgwCompetencias = new DataGridView();
             label1 = new Label();
+            btnAgregar = new Button();
+            btnBorrar = new Button();
+            btnModificar = new Button();
+            ((System.ComponentModel.ISupportInitialize)dgwCompetencias).BeginInit();
             SuspendLayout();
             // 
             // btnVolverSistema
             // 
             btnVolverSistema.BackgroundImage = Properties.Resources.volver;
             btnVolverSistema.BackgroundImageLayout = ImageLayout.Stretch;
-            btnVolverSistema.Location = new Point(718, 14);
-            btnVolverSistema.Margin = new Padding(4, 5, 4, 5);
+            btnVolverSistema.Location = new Point(790, 8);
             btnVolverSistema.Name = "btnVolverSistema";
-            btnVolverSistema.Size = new Size(69, 80);
+            btnVolverSistema.Size = new Size(48, 48);
             btnVolverSistema.TabIndex = 4;
             btnVolverSistema.UseVisualStyleBackColor = true;
             btnVolverSistema.Click += btnVolverSistema_Click;
             // 
+            // dgwCompetencias
+            // 
+            dgwCompetencias.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgwCompetencias.Location = new Point(12, 88);
+            dgwCompetencias.Name = "dgwCompetencias";
+            dgwCompetencias.Size = new Size(826, 404);
+            dgwCompetencias.TabIndex = 5;
+            dgwCompetencias.CurrentCellChanged += dgwCompetencias_CurrentCellChanged;
+            // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 20F);
-            label1.Location = new Point(13, 40);
-            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Font = new Font("Segoe UI", 18F);
+            label1.Location = new Point(12, 24);
             label1.Name = "label1";
-            label1.Size = new Size(542, 54);
-            label1.TabIndex = 5;
-            label1.Text = "Competencias (En Desarrollo)";
+            label1.Size = new Size(165, 32);
+            label1.TabIndex = 6;
+            label1.Text = "Competencias";
+            // 
+            // btnAgregar
+            // 
+            btnAgregar.BackColor = Color.Green;
+            btnAgregar.ForeColor = SystemColors.ButtonFace;
+            btnAgregar.Location = new Point(396, 8);
+            btnAgregar.Name = "btnAgregar";
+            btnAgregar.Size = new Size(136, 48);
+            btnAgregar.TabIndex = 41;
+            btnAgregar.Text = "Agregar Competencia";
+            btnAgregar.UseVisualStyleBackColor = false;
+            btnAgregar.Click += btnAgregar_Click;
+            // 
+            // btnBorrar
+            // 
+            btnBorrar.BackColor = Color.Crimson;
+            btnBorrar.ForeColor = SystemColors.ButtonFace;
+            btnBorrar.Location = new Point(664, 8);
+            btnBorrar.Name = "btnBorrar";
+            btnBorrar.Size = new Size(120, 48);
+            btnBorrar.TabIndex = 40;
+            btnBorrar.Text = "Eliminar";
+            btnBorrar.UseVisualStyleBackColor = false;
+            btnBorrar.Click += btnBorrar_Click;
+            // 
+            // btnModificar
+            // 
+            btnModificar.BackColor = Color.DodgerBlue;
+            btnModificar.ForeColor = SystemColors.ButtonFace;
+            btnModificar.Location = new Point(538, 8);
+            btnModificar.Name = "btnModificar";
+            btnModificar.Size = new Size(120, 48);
+            btnModificar.TabIndex = 39;
+            btnModificar.Text = "Modificar";
+            btnModificar.UseVisualStyleBackColor = false;
+            btnModificar.Click += btnModificar_Click;
             // 
             // Competencias
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 624);
+            ClientSize = new Size(850, 508);
             ControlBox = false;
+            Controls.Add(btnAgregar);
+            Controls.Add(btnBorrar);
+            Controls.Add(btnModificar);
             Controls.Add(label1);
+            Controls.Add(dgwCompetencias);
             Controls.Add(btnVolverSistema);
-            Margin = new Padding(4, 5, 4, 5);
-            MaximumSize = new Size(822, 680);
-            MinimumSize = new Size(822, 680);
+            MaximumSize = new Size(866, 547);
+            MinimumSize = new Size(866, 547);
             Name = "Competencias";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Competencias";
+            Shown += Competencias_VisibleChanged;
+            VisibleChanged += Competencias_VisibleChanged;
+            ((System.ComponentModel.ISupportInitialize)dgwCompetencias).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -75,6 +130,11 @@
         #endregion
 
         private Button btnVolverSistema;
+        private DataGridView dgwCompetencias;
         private Label label1;
+        private Button btnAgregar;
+        private Button btnBorrar;
+        private Button btnModificar;
+        private Label lblId;
     }
 }

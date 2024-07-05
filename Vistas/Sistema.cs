@@ -17,11 +17,12 @@ namespace Vistas
         {
             InitializeComponent();
             prinicpalReferencia = principal;
+
         }
 
         private void btnVolverSistema_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
             prinicpalReferencia.Show();
         }
 
@@ -35,13 +36,22 @@ namespace Vistas
         private void btnListaDisciplinas_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form listaDisciplinas = new ListaDisciplinas(this);
-            listaDisciplinas.Show();
+            Form abmDisciplinas = new ABMDisciplinas(this);
+            abmDisciplinas.Show();
         }
 
-        private void Sistema_Load(object sender, EventArgs e)
+        private void btnAtletas_Click(object sender, EventArgs e)
         {
+            this.Hide();
+            Form listaAtletas = new Atletas(this);
+            listaAtletas.Show();
+        }
 
+        private void btnCompetencias_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form listaCompetencias = new Competencias(this);
+            listaCompetencias.Show();
         }
     }
 }
