@@ -152,6 +152,7 @@ namespace ClaseBase
             if (reader.Read())
             {
                 atleta = new Atleta();
+                atleta.Atl_ID = (int)reader["Atl_ID"];
                 atleta.Atl_DNI = reader["Atl_DNI"].ToString();
                 atleta.Atl_Nombre = reader["Atl_Nombre"].ToString();
                 atleta.Atl_Apellido = reader["Atl_Apellido"].ToString();
@@ -180,7 +181,7 @@ namespace ClaseBase
             SqlConnection cnn = new SqlConnection(conexion);
             SqlCommand cmd = new SqlCommand();
 
-            cmd.CommandText = "SELECT Atl_DNI as 'DNI', Atl_Apellido as 'Apellido', Atl_Nombre as 'Nombre', " +
+            cmd.CommandText = "SELECT Atl_ID as 'ID', Atl_DNI as 'DNI', Atl_Apellido as 'Apellido', Atl_Nombre as 'Nombre', " +
                 "Atl_Nacionalidad as 'Nacionalidad', Atl_Genero as 'Género' FROM Atleta";
             cmd.CommandText += " WHERE Atl_DNI LIKE @patron OR Atl_Apellido LIKE @patron OR Atl_Nombre LIKE @patron";
 
@@ -213,6 +214,21 @@ namespace ClaseBase
             da.SelectCommand = new SqlCommand();
             da.SelectCommand.Connection = cnn;
             da.SelectCommand.CommandText = "OrdenarAtletasPorApellido";
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            return ds.Tables[0];
+        }
+
+        public static DataTable listar_atletas()
+        {
+            string conexion = DataBaseConfig.DB_CONN;
+            SqlConnection cnn = new SqlConnection(conexion);
+            SqlDataAdapter da = new SqlDataAdapter();
+            da.SelectCommand = new SqlCommand();
+            da.SelectCommand.Connection = cnn;
+            da.SelectCommand.CommandText = "SELECT Atl_ID as 'ID', Atl_DNI as 'DNI', Atl_Apellido as 'Apellido', Atl_Nombre as 'Nombre', Atl_Nacionalidad as 'Nacionalidad', Atl_Genero as 'Género' FROM Atleta";
+            da.SelectCommand.CommandType = CommandType.Text;
+
             DataSet ds = new DataSet();
             da.Fill(ds);
             return ds.Tables[0];

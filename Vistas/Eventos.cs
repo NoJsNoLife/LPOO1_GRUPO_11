@@ -17,12 +17,19 @@ namespace Vistas
         {
             InitializeComponent();
             principalReferencia = principal;
-        }  
+        }
 
         private void btnVolverSistema_Click(object sender, EventArgs e)
         {
             this.Close();
             principalReferencia.Show();
+        }
+
+        private void btnInscripcion_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            InscripcionEventos inscripcionEventos = new InscripcionEventos(this);
+            inscripcionEventos.Show();
         }
     }
 }

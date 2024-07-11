@@ -30,6 +30,7 @@
         {
             label1 = new Label();
             btnVolverSistema = new Button();
+            btnInscripcion = new Button();
             SuspendLayout();
             // 
             // label1
@@ -53,15 +54,26 @@
             btnVolverSistema.UseVisualStyleBackColor = true;
             btnVolverSistema.Click += btnVolverSistema_Click;
             // 
+            // btnInscripcion
+            // 
+            btnInscripcion.Location = new Point(12, 64);
+            btnInscripcion.Name = "btnInscripcion";
+            btnInscripcion.Size = new Size(127, 48);
+            btnInscripcion.TabIndex = 8;
+            btnInscripcion.Text = "Realizar inscripción";
+            btnInscripcion.UseVisualStyleBackColor = true;
+            btnInscripcion.Click += btnInscripcion_Click;
+            // 
             // Eventos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(564, 385);
             ControlBox = false;
+            Controls.Add(btnInscripcion);
             Controls.Add(label1);
             Controls.Add(btnVolverSistema);
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             MaximumSize = new Size(580, 424);
             MinimumSize = new Size(580, 424);
             Name = "Eventos";
@@ -75,5 +87,6 @@
 
         private Label label1;
         private Button btnVolverSistema;
+        private Button btnInscripcion;
     }
 }

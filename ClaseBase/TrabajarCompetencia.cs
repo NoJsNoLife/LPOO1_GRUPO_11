@@ -139,6 +139,26 @@ namespace ClaseBase
             return competencia;
         }
 
+        public static DataTable buscar_competencias(string sPatron)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlCommand command = new SqlCommand("SELECT Com_Nombre as 'Nombre', Com_FechaInicio as 'FechaInicio', Com_FechaFin as 'FechaFin', Com_ID as 'ID' FROM Competencia WHERE Com_Nombre LIKE @patron OR Com_ID LIKE @patron", connection);
+                command.CommandType = CommandType.Text;
+
+                command.Parameters.AddWithValue("@patron", "%" + sPatron + "%");
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                connection.Open();
+
+                DataTable dataTable = new DataTable();
+
+                adapter.Fill(dataTable);
+                connection.Close();
+                return dataTable;
+            }
+
+        }
+
 
     }
 
