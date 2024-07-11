@@ -58,7 +58,7 @@
             // 
             txtParticipante.Location = new Point(12, 89);
             txtParticipante.Name = "txtParticipante";
-            txtParticipante.PlaceholderText = "ID, DNI o Apellido";
+            txtParticipante.PlaceholderText = "Buscar por ID, DNI o Apellido";
             txtParticipante.Size = new Size(349, 23);
             txtParticipante.TabIndex = 1;
             txtParticipante.TextChanged += txtParticipante_TextChanged;
@@ -67,7 +67,7 @@
             // 
             txtCompetencia.Location = new Point(439, 89);
             txtCompetencia.Name = "txtCompetencia";
-            txtCompetencia.PlaceholderText = "Nombre o ID";
+            txtCompetencia.PlaceholderText = "Buscar por Nombre o ID";
             txtCompetencia.Size = new Size(349, 23);
             txtCompetencia.TabIndex = 2;
             txtCompetencia.TextChanged += txtCompetencia_TextChanged;
