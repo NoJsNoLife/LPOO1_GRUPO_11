@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ClaseBase;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -30,6 +31,23 @@ namespace Vistas
             this.Hide();
             InscripcionEventos inscripcionEventos = new InscripcionEventos(this);
             inscripcionEventos.Show();
+        }
+
+        private void btnAnularInscripcion_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            BajaEvento anularInscripcion = new BajaEvento(this);
+            anularInscripcion.Show();
+        }
+
+        private void Eventos_VisibleChanged(object sender, EventArgs e)
+        {   
+            CargarEventos();
+        }
+
+        private void CargarEventos() { 
+            dgwEventos.DataSource = TrabajarEvento.listarEventos();
+            dgwEventos.Columns["Eve_ID"].Visible = false;
         }
     }
 }

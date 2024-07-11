@@ -171,9 +171,11 @@
             // 
             // InscripcionEventos
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleDimensions = new SizeF(96F, 96F);
+            AutoScaleMode = AutoScaleMode.Dpi;
+            AutoSize = true;
             ClientSize = new Size(800, 450);
+            ControlBox = false;
             Controls.Add(lblTitulo);
             Controls.Add(label4);
             Controls.Add(label3);
@@ -188,6 +190,7 @@
             Controls.Add(txtParticipante);
             Controls.Add(label1);
             Name = "InscripcionEventos";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Inscripción a evento";
             Load += InscripcionEventos_Load;
             ((System.ComponentModel.ISupportInitialize)dgwParticipantes).EndInit();

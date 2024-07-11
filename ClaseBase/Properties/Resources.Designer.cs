@@ -61,7 +61,7 @@ namespace ClaseBase.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=&quot;C:\Users\Enzo Meneghini\Desktop\LPOO\LPOO1_GRUPO_11_TP2[1]\LPOO1_GRUPO_11_TP2\LPOO1_GRUPO_11\DataBase\comdep.mdf&quot;;Integrated Security=True;Connect Timeout=30;Encrypt=True.
+        ///   Busca una cadena traducida similar a Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=&quot;D:\Universidad\Tercer Año\Laboratorio de Programacion Orientada a Objetos 1\TP3\DataBases\comdep.mdf&quot;;Integrated Security=True;Connect Timeout=30;Encrypt=True.
         /// </summary>
         internal static string DB_CONN {
             get {
