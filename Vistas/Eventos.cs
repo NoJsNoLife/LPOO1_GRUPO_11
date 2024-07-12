@@ -41,13 +41,21 @@ namespace Vistas
         }
 
         private void Eventos_VisibleChanged(object sender, EventArgs e)
-        {   
+        {
             CargarEventos();
         }
 
-        private void CargarEventos() { 
+        private void CargarEventos()
+        {
             dgwEventos.DataSource = TrabajarEvento.listarEventos();
             dgwEventos.Columns["Eve_ID"].Visible = false;
+        }
+
+        private void btnCronometrar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Cronometraje cronometraje = new Cronometraje(this);
+            cronometraje.Show();
         }
     }
 }

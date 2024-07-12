@@ -166,5 +166,73 @@ namespace ClaseBase
             }
         }
 
+        public static DataTable buscarAtletasPorCompetencia(int idCompetencia)
+        {
+            DataTable dataTable = new DataTable();
+            String conexion = DataBaseConfig.DB_CONN;
+            using (SqlConnection cnn = new SqlConnection(conexion))
+            {
+                // Consulta modificada para incluir la verificación del estado "Acreditado"
+                string consulta = @"
+                    SELECT a.* 
+                    FROM Atleta a
+                    INNER JOIN Evento e ON a.Atl_ID = e.Atl_ID
+                    WHERE e.Com_ID = @com_id AND e.Atl_ID IS NOT NULL AND e.Eve_Estado = 'Acreditado'";
+
+                using (SqlCommand cmd = new SqlCommand(consulta, cnn))
+                {
+                    cmd.Parameters.AddWithValue("@com_id", idCompetencia); // Usar idCompetencia para filtrar
+
+                    cnn.Open();
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                    {
+                        adapter.Fill(dataTable);
+                    }
+                }
+            }
+            return dataTable;
+        }
+
+        public static void ActualizarTiemposEvento(int idAtleta, int idCompetencia, DateTime horaInicio, DateTime horaFin)
+        {
+            String conexion = DataBaseConfig.DB_CONN;
+            using (SqlConnection cnn = new SqlConnection(conexion))
+            {
+                // Consulta SQL para actualizar los tiempos de inicio y fin
+                string consulta = @"
+                    UPDATE Evento
+                    SET Eve_HoraInicio = @horaInicio, Eve_HoraFin = @horaFin
+                    WHERE Atl_ID = @atlId AND Com_ID = @comId";
+
+                using (SqlCommand cmd = new SqlCommand(consulta, cnn))
+                {
+                    // Asignar los valores a los parámetros
+                    cmd.Parameters.AddWithValue("@horaInicio", horaInicio);
+                    cmd.Parameters.AddWithValue("@horaFin", horaFin);
+                    cmd.Parameters.AddWithValue("@atlId", idAtleta);
+                    cmd.Parameters.AddWithValue("@comId", idCompetencia);
+
+                    cnn.Open();
+                    int filasAfectadas = cmd.ExecuteNonQuery();
+
+                    // Opcional: Puedes usar filasAfectadas para verificar si la actualización fue exitosa
+                    if (filasAfectadas > 0)
+                    {
+                        Console.WriteLine("Tiempos actualizados correctamente.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("No se encontró el evento especificado.");
+                    }
+                }
+            }
+        }
+
+
+
+
+
+
+
     }
 }
