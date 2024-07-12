@@ -40,6 +40,13 @@ namespace Vistas
             anularInscripcion.Show();
         }
 
+        private void btnAcreditarInscripcion_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AcreditarInscripcion acreditarInscripcion = new AcreditarInscripcion(this);
+            acreditarInscripcion.Show();
+        }
+
         private void Eventos_VisibleChanged(object sender, EventArgs e)
         {
             CargarEventos();
@@ -50,6 +57,7 @@ namespace Vistas
             dgwEventos.DataSource = TrabajarEvento.listarEventos();
             dgwEventos.Columns["Eve_ID"].Visible = false;
         }
+
 
         private void btnCronometrar_Click(object sender, EventArgs e)
         {

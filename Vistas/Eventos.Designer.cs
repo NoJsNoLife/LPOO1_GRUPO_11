@@ -32,7 +32,7 @@
             btnVolverSistema = new Button();
             btnInscripcion = new Button();
             btnAnularInscripcion = new Button();
-            button1 = new Button();
+            btnAcreditarInscripcion = new Button();
             btnCronometrar = new Button();
             button3 = new Button();
             dgwEventos = new DataGridView();
@@ -84,16 +84,17 @@
             btnAnularInscripcion.UseVisualStyleBackColor = false;
             btnAnularInscripcion.Click += btnAnularInscripcion_Click;
             // 
-            // button1
+            // btnAcreditarInscripcion
             // 
-            button1.BackColor = Color.Green;
-            button1.ForeColor = SystemColors.ButtonFace;
-            button1.Location = new Point(400, 14);
-            button1.Name = "button1";
-            button1.Size = new Size(127, 48);
-            button1.TabIndex = 10;
-            button1.Text = "Acreditar inscripción";
-            button1.UseVisualStyleBackColor = false;
+            btnAcreditarInscripcion.BackColor = Color.Green;
+            btnAcreditarInscripcion.ForeColor = SystemColors.ButtonFace;
+            btnAcreditarInscripcion.Location = new Point(400, 14);
+            btnAcreditarInscripcion.Name = "btnAcreditarInscripcion";
+            btnAcreditarInscripcion.Size = new Size(127, 48);
+            btnAcreditarInscripcion.TabIndex = 10;
+            btnAcreditarInscripcion.Text = "Acreditar inscripción";
+            btnAcreditarInscripcion.UseVisualStyleBackColor = false;
+            btnAcreditarInscripcion.Click += btnAcreditarInscripcion_Click;
             // 
             // btnCronometrar
             // 
@@ -137,8 +138,9 @@
             ControlBox = false;
             Controls.Add(dgwEventos);
             Controls.Add(button3);
+
+            Controls.Add(btnAcreditarInscripcion);
             Controls.Add(btnCronometrar);
-            Controls.Add(button1);
             Controls.Add(btnAnularInscripcion);
             Controls.Add(btnInscripcion);
             Controls.Add(label1);
@@ -160,7 +162,7 @@
         private Button btnVolverSistema;
         private Button btnInscripcion;
         private Button btnAnularInscripcion;
-        private Button button1;
+        private Button btnAcreditarInscripcion;
         private Button btnCronometrar;
         private Button button3;
         private DataGridView dgwEventos;

@@ -166,6 +166,23 @@ namespace ClaseBase
             }
         }
 
+        public static void acreditarInscripcion(int id_evento)
+        {
+            String conexion = DataBaseConfig.DB_CONN;
+            using (SqlConnection cnn = new SqlConnection(conexion))
+            {
+                using (SqlCommand cmd = new SqlCommand("UPDATE Evento SET Eve_Estado = 'Acreditado' WHERE Eve_ID = @eve_id", cnn))
+                {
+                    cmd.CommandType = CommandType.Text;
+                    cmd.Parameters.AddWithValue("@eve_id", id_evento);
+
+                    cnn.Open();
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
+
         public static DataTable buscarAtletasPorCompetencia(int idCompetencia)
         {
             DataTable dataTable = new DataTable();
@@ -227,12 +244,6 @@ namespace ClaseBase
                 }
             }
         }
-
-
-
-
-
-
 
     }
 }
