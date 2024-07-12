@@ -87,7 +87,8 @@ namespace Vistas
                 return;
             }
 
-            if (competenciaId == 0) { 
+            if (competenciaId == 0)
+            {
                 MessageBox.Show("Debe seleccionar una competencia para registrar el tiempo");
             }
 
@@ -100,6 +101,44 @@ namespace Vistas
                 MessageBox.Show("Tiempos registrados correctamente");
             }
 
+        }
+
+        private void btnDescalificado_Click(object sender, EventArgs e)
+        {
+            if (atletaId == 0)
+            {
+                MessageBox.Show("Debe seleccionar un atleta para descalificar");
+                return;
+            }
+            if (competenciaId == 0)
+            {
+                MessageBox.Show("Debe seleccionar una competencia para descalificar");
+            }
+            var respuesta = MessageBox.Show("Esta seguro que desea registrar la descalificacion de este participante?", Text, MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+            if (respuesta == DialogResult.Yes)
+            {
+                TrabajarEvento.actualizarEstadoEvento(atletaId, competenciaId, "Descalificado");
+                MessageBox.Show("Estado actualizado correctamente");
+            }
+        }
+
+        private void btnAbandono_Click(object sender, EventArgs e)
+        {
+            if (atletaId == 0)
+            {
+                MessageBox.Show("Debe seleccionar un atleta para actualizar su estado");
+                return;
+            }
+            if (competenciaId == 0)
+            {
+                MessageBox.Show("Debe seleccionar una competencia para actualizar su estado");
+            }
+            var respuesta = MessageBox.Show("Esta seguro que desea registrar el abandono de este participante?", Text, MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+            if (respuesta == DialogResult.Yes)
+            {
+                TrabajarEvento.actualizarEstadoEvento(atletaId, competenciaId, "Abandono");
+                MessageBox.Show("Estado actualizado correctamente");
+            }
         }
     }
 }

@@ -183,13 +183,44 @@ namespace ClaseBase
             }
         }
 
+        public static void actualizarEstadoEvento(int idAtleta, int idCompetencia, string Estado)
+        {
+            String conexion = DataBaseConfig.DB_CONN;
+            using (SqlConnection cnn = new SqlConnection(conexion))
+            {
+                // Asegúrate de que la consulta SQL utiliza los parámetros correctos
+                using (SqlCommand cmd = new SqlCommand("UPDATE Evento SET Eve_Estado = @estado WHERE Atl_ID = @atlId AND Com_ID = @comId", cnn))
+                {
+                    cmd.CommandType = CommandType.Text;
+                    cmd.Parameters.AddWithValue("@atlId", idAtleta); // Corrige el nombre del parámetro a @atlId
+                    cmd.Parameters.AddWithValue("@comId", idCompetencia); // Corrige el nombre del parámetro a @comId
+                    cmd.Parameters.AddWithValue("@estado", Estado); // Usa el parámetro Estado
+
+                    cnn.Open();
+
+                    int filasAfectadas = cmd.ExecuteNonQuery();
+
+                    // Aquí puedes manejar el resultado, por ejemplo, verificando si se actualizó alguna fila
+                    if (filasAfectadas > 0)
+                    {
+                        Console.WriteLine("Estado del evento actualizado correctamente.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("No se encontró el evento especificado con los criterios proporcionados.");
+                    }
+                }
+            }
+        }
+
+
+
         public static DataTable buscarAtletasPorCompetencia(int idCompetencia)
         {
             DataTable dataTable = new DataTable();
             String conexion = DataBaseConfig.DB_CONN;
             using (SqlConnection cnn = new SqlConnection(conexion))
             {
-                // Consulta modificada para incluir la verificación del estado "Acreditado"
                 string consulta = @"
                     SELECT a.* 
                     FROM Atleta a
@@ -198,7 +229,7 @@ namespace ClaseBase
 
                 using (SqlCommand cmd = new SqlCommand(consulta, cnn))
                 {
-                    cmd.Parameters.AddWithValue("@com_id", idCompetencia); // Usar idCompetencia para filtrar
+                    cmd.Parameters.AddWithValue("@com_id", idCompetencia); 
 
                     cnn.Open();
                     using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))

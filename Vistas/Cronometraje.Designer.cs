@@ -41,6 +41,8 @@
             dtpLlegada = new DateTimePicker();
             btnRegistrar = new Button();
             btnCancelar = new Button();
+            btnAbandono = new Button();
+            btnDescalificado = new Button();
             ((System.ComponentModel.ISupportInitialize)dgwParticipantes).BeginInit();
             SuspendLayout();
             // 
@@ -174,12 +176,38 @@
             btnCancelar.UseVisualStyleBackColor = true;
             btnCancelar.Click += btnVolverSistema_Click;
             // 
+            // btnAbandono
+            // 
+            btnAbandono.BackColor = Color.Crimson;
+            btnAbandono.ForeColor = SystemColors.ButtonFace;
+            btnAbandono.Location = new Point(621, 12);
+            btnAbandono.Name = "btnAbandono";
+            btnAbandono.Size = new Size(113, 45);
+            btnAbandono.TabIndex = 17;
+            btnAbandono.Text = "Abandono";
+            btnAbandono.UseVisualStyleBackColor = false;
+            btnAbandono.Click += btnAbandono_Click;
+            // 
+            // btnDescalificado
+            // 
+            btnDescalificado.BackColor = Color.Crimson;
+            btnDescalificado.ForeColor = SystemColors.ButtonFace;
+            btnDescalificado.Location = new Point(502, 12);
+            btnDescalificado.Name = "btnDescalificado";
+            btnDescalificado.Size = new Size(113, 45);
+            btnDescalificado.TabIndex = 18;
+            btnDescalificado.Text = "Descalificar";
+            btnDescalificado.UseVisualStyleBackColor = false;
+            btnDescalificado.Click += btnDescalificado_Click;
+            // 
             // Cronometraje
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 382);
             ControlBox = false;
+            Controls.Add(btnDescalificado);
+            Controls.Add(btnAbandono);
             Controls.Add(btnCancelar);
             Controls.Add(btnRegistrar);
             Controls.Add(dtpLlegada);
@@ -216,5 +244,7 @@
         private DateTimePicker dtpLlegada;
         private Button btnRegistrar;
         private Button btnCancelar;
+        private Button btnAbandono;
+        private Button btnDescalificado;
     }
 }
