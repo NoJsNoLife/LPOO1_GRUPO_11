@@ -30,9 +30,9 @@ namespace Vistas
 
         private void listarCompetencias()
         {
-            cmbCompetencias.DataSource = ClaseBase.TrabajarCompetencia.listarCompetencias2();
-            cmbCompetencias.DisplayMember = "Com_Nombre";
-            cmbCompetencias.ValueMember = "Com_ID";
+            cmbCompetencias.DataSource = ClaseBase.TrabajarCompetencia.listarCompetencias();
+            cmbCompetencias.DisplayMember = "Nombre";
+            cmbCompetencias.ValueMember = "ID";
         }
 
         private void rBtnId_CheckedChanged(object sender, EventArgs e)
