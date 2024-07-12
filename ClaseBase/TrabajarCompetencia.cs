@@ -27,6 +27,21 @@ namespace ClaseBase
             }
         }
 
+        public static DataTable listarCompetencias2()
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlCommand command = new SqlCommand("SELECT * FROM Competencia", connection);
+                command.CommandType = CommandType.Text;
+
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                DataTable dataTable = new DataTable();
+                adapter.Fill(dataTable);
+
+                return dataTable;
+            }
+        }
+
         public static void InsertarCompetencia(string nombre, string descripcion, DateTime fechaInicio, DateTime fechaFin, string estado, string organizador, string ubicacion, string sponsors, int catId, int disId)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
