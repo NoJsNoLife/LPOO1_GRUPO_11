@@ -175,6 +175,43 @@ namespace ClaseBase
             return atleta;
         }
 
+        public static Atleta buscarAtletaPorId(int id)
+        {
+            string conexion = DataBaseConfig.DB_CONN;
+            using (SqlConnection cnn = new SqlConnection(conexion))
+            {
+                using (SqlCommand cmd = new SqlCommand("SELECT * FROM Atleta WHERE Atl_ID = @id", cnn))
+                {
+                    cmd.CommandType = CommandType.Text;
+                    cmd.Parameters.AddWithValue("@id", id);
+
+                    cnn.Open();
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            Atleta atleta = new Atleta();
+                            atleta.Atl_ID = (int)reader["Atl_ID"];
+                            atleta.Atl_DNI = reader["Atl_DNI"].ToString();
+                            atleta.Atl_Nombre = reader["Atl_Nombre"].ToString();
+                            atleta.Atl_Apellido = reader["Atl_Apellido"].ToString();
+                            atleta.Atl_Nacionalidad = reader["Atl_Nacionalidad"].ToString();
+                            atleta.Atl_Entrenador = reader["Atl_Entrenador"].ToString();
+                            atleta.Atl_Genero = reader["Atl_Genero"].ToString();
+                            atleta.Atl_Altura = reader.IsDBNull(reader.GetOrdinal("Atl_Altura")) ? 0 : (double)reader["Atl_Altura"];
+                            atleta.Atl_Peso = reader.IsDBNull(reader.GetOrdinal("Atl_Peso")) ? 0 : (double)reader["Atl_Peso"];
+                            atleta.Atl_FechaNac = (DateTime)reader["Atl_FechaNac"];
+                            atleta.Atl_Dirección = reader["Atl_Direccion"].ToString();
+                            atleta.Atl_email = reader["Atl_email"].ToString();
+                            return atleta;
+                        }
+                    }
+                }
+            }
+            return null;
+        }
+
+
         public static object buscar_atletas(string sPatron)
         {
             string conexion = DataBaseConfig.DB_CONN;

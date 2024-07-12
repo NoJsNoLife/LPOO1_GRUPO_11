@@ -58,5 +58,12 @@ namespace Vistas
             dgwEventos.Columns["Eve_ID"].Visible = false;
         }
 
+
+        private void btnCronometrar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Cronometraje cronometraje = new Cronometraje(this);
+            cronometraje.Show();
+        }
     }
 }

@@ -33,7 +33,7 @@
             btnInscripcion = new Button();
             btnAnularInscripcion = new Button();
             btnAcreditarInscripcion = new Button();
-            button2 = new Button();
+            btnCronometrar = new Button();
             button3 = new Button();
             dgwEventos = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)dgwEventos).BeginInit();
@@ -96,16 +96,17 @@
             btnAcreditarInscripcion.UseVisualStyleBackColor = false;
             btnAcreditarInscripcion.Click += btnAcreditarInscripcion_Click;
             // 
-            // button2
+            // btnCronometrar
             // 
-            button2.BackColor = Color.Green;
-            button2.ForeColor = SystemColors.ButtonFace;
-            button2.Location = new Point(533, 14);
-            button2.Name = "button2";
-            button2.Size = new Size(127, 48);
-            button2.TabIndex = 11;
-            button2.Text = "Cronometrar";
-            button2.UseVisualStyleBackColor = false;
+            btnCronometrar.BackColor = Color.Green;
+            btnCronometrar.ForeColor = SystemColors.ButtonFace;
+            btnCronometrar.Location = new Point(533, 14);
+            btnCronometrar.Name = "btnCronometrar";
+            btnCronometrar.Size = new Size(127, 48);
+            btnCronometrar.TabIndex = 11;
+            btnCronometrar.Text = "Cronometrar";
+            btnCronometrar.UseVisualStyleBackColor = false;
+            btnCronometrar.Click += btnCronometrar_Click;
             // 
             // button3
             // 
@@ -137,8 +138,9 @@
             ControlBox = false;
             Controls.Add(dgwEventos);
             Controls.Add(button3);
-            Controls.Add(button2);
+
             Controls.Add(btnAcreditarInscripcion);
+            Controls.Add(btnCronometrar);
             Controls.Add(btnAnularInscripcion);
             Controls.Add(btnInscripcion);
             Controls.Add(label1);
@@ -161,7 +163,7 @@
         private Button btnInscripcion;
         private Button btnAnularInscripcion;
         private Button btnAcreditarInscripcion;
-        private Button button2;
+        private Button btnCronometrar;
         private Button button3;
         private DataGridView dgwEventos;
     }
