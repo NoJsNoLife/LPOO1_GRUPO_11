@@ -27,6 +27,18 @@ namespace ClaseBase
             }
         }
 
+        public static DataTable listarCompetenciasConEventos()
+        {
+            string conexion = DataBaseConfig.DB_CONN;
+            SqlConnection cnn = new SqlConnection(conexion);
+            SqlCommand cmd = new SqlCommand("ObtenerEventosCompetencias", cnn);
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            return dt;
+        }
+
         public static void InsertarCompetencia(string nombre, string descripcion, DateTime fechaInicio, DateTime fechaFin, string estado, string organizador, string ubicacion, string sponsors, int catId, int disId)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))

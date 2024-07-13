@@ -43,9 +43,9 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 20F);
-            label1.Location = new Point(9, 13);
+            label1.Location = new Point(10, 17);
             label1.Name = "label1";
-            label1.Size = new Size(109, 37);
+            label1.Size = new Size(136, 46);
             label1.TabIndex = 7;
             label1.Text = "Eventos";
             // 
@@ -53,9 +53,10 @@
             // 
             btnVolverSistema.BackgroundImage = Properties.Resources.volver;
             btnVolverSistema.BackgroundImageLayout = ImageLayout.Stretch;
-            btnVolverSistema.Location = new Point(799, 14);
+            btnVolverSistema.Location = new Point(913, 19);
+            btnVolverSistema.Margin = new Padding(3, 4, 3, 4);
             btnVolverSistema.Name = "btnVolverSistema";
-            btnVolverSistema.Size = new Size(48, 48);
+            btnVolverSistema.Size = new Size(55, 64);
             btnVolverSistema.TabIndex = 6;
             btnVolverSistema.UseVisualStyleBackColor = true;
             btnVolverSistema.Click += btnVolverSistema_Click;
@@ -64,9 +65,10 @@
             // 
             btnInscripcion.BackColor = Color.DodgerBlue;
             btnInscripcion.ForeColor = SystemColors.ButtonFace;
-            btnInscripcion.Location = new Point(134, 14);
+            btnInscripcion.Location = new Point(153, 19);
+            btnInscripcion.Margin = new Padding(3, 4, 3, 4);
             btnInscripcion.Name = "btnInscripcion";
-            btnInscripcion.Size = new Size(127, 48);
+            btnInscripcion.Size = new Size(145, 64);
             btnInscripcion.TabIndex = 8;
             btnInscripcion.Text = "Realizar inscripción";
             btnInscripcion.UseVisualStyleBackColor = false;
@@ -76,9 +78,10 @@
             // 
             btnAnularInscripcion.BackColor = Color.Crimson;
             btnAnularInscripcion.ForeColor = SystemColors.ButtonFace;
-            btnAnularInscripcion.Location = new Point(267, 14);
+            btnAnularInscripcion.Location = new Point(305, 19);
+            btnAnularInscripcion.Margin = new Padding(3, 4, 3, 4);
             btnAnularInscripcion.Name = "btnAnularInscripcion";
-            btnAnularInscripcion.Size = new Size(127, 48);
+            btnAnularInscripcion.Size = new Size(145, 64);
             btnAnularInscripcion.TabIndex = 9;
             btnAnularInscripcion.Text = "Anular inscripción";
             btnAnularInscripcion.UseVisualStyleBackColor = false;
@@ -88,9 +91,10 @@
             // 
             btnAcreditarInscripcion.BackColor = Color.Green;
             btnAcreditarInscripcion.ForeColor = SystemColors.ButtonFace;
-            btnAcreditarInscripcion.Location = new Point(400, 14);
+            btnAcreditarInscripcion.Location = new Point(457, 19);
+            btnAcreditarInscripcion.Margin = new Padding(3, 4, 3, 4);
             btnAcreditarInscripcion.Name = "btnAcreditarInscripcion";
-            btnAcreditarInscripcion.Size = new Size(127, 48);
+            btnAcreditarInscripcion.Size = new Size(145, 64);
             btnAcreditarInscripcion.TabIndex = 10;
             btnAcreditarInscripcion.Text = "Acreditar inscripción";
             btnAcreditarInscripcion.UseVisualStyleBackColor = false;
@@ -100,9 +104,10 @@
             // 
             btnCronometrar.BackColor = Color.Green;
             btnCronometrar.ForeColor = SystemColors.ButtonFace;
-            btnCronometrar.Location = new Point(533, 14);
+            btnCronometrar.Location = new Point(609, 19);
+            btnCronometrar.Margin = new Padding(3, 4, 3, 4);
             btnCronometrar.Name = "btnCronometrar";
-            btnCronometrar.Size = new Size(127, 48);
+            btnCronometrar.Size = new Size(145, 64);
             btnCronometrar.TabIndex = 11;
             btnCronometrar.Text = "Cronometrar";
             btnCronometrar.UseVisualStyleBackColor = false;
@@ -112,41 +117,44 @@
             // 
             button3.BackColor = Color.Green;
             button3.ForeColor = SystemColors.ButtonFace;
-            button3.Location = new Point(666, 14);
+            button3.Location = new Point(761, 19);
+            button3.Margin = new Padding(3, 4, 3, 4);
             button3.Name = "button3";
-            button3.Size = new Size(127, 48);
+            button3.Size = new Size(145, 64);
             button3.TabIndex = 12;
             button3.Text = "Resultados";
             button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
             // dgwEventos
             // 
             dgwEventos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgwEventos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgwEventos.Location = new Point(24, 80);
+            dgwEventos.Location = new Point(27, 107);
+            dgwEventos.Margin = new Padding(3, 4, 3, 4);
             dgwEventos.Name = "dgwEventos";
             dgwEventos.ReadOnly = true;
+            dgwEventos.RowHeadersWidth = 51;
             dgwEventos.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dgwEventos.Size = new Size(766, 293);
+            dgwEventos.Size = new Size(875, 391);
             dgwEventos.TabIndex = 13;
             // 
             // Eventos
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(859, 409);
+            ClientSize = new Size(982, 545);
             ControlBox = false;
             Controls.Add(dgwEventos);
             Controls.Add(button3);
-
             Controls.Add(btnAcreditarInscripcion);
             Controls.Add(btnCronometrar);
             Controls.Add(btnAnularInscripcion);
             Controls.Add(btnInscripcion);
             Controls.Add(label1);
             Controls.Add(btnVolverSistema);
-            Margin = new Padding(2);
-            MinimumSize = new Size(580, 424);
+            Margin = new Padding(2, 3, 2, 3);
+            MinimumSize = new Size(660, 550);
             Name = "Eventos";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Eventos";

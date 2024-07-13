@@ -65,5 +65,12 @@ namespace Vistas
             Cronometraje cronometraje = new Cronometraje(this);
             cronometraje.Show();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ListarResultadosEvento listarResultadosEvento = new ListarResultadosEvento(this);
+            listarResultadosEvento.Show();
+        }
     }
 }

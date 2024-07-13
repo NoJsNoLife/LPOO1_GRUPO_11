@@ -213,8 +213,6 @@ namespace ClaseBase
             }
         }
 
-
-
         public static DataTable buscarAtletasPorCompetencia(int idCompetencia)
         {
             DataTable dataTable = new DataTable();
@@ -222,14 +220,14 @@ namespace ClaseBase
             using (SqlConnection cnn = new SqlConnection(conexion))
             {
                 string consulta = @"
-                    SELECT a.* 
-                    FROM Atleta a
-                    INNER JOIN Evento e ON a.Atl_ID = e.Atl_ID
-                    WHERE e.Com_ID = @com_id AND e.Atl_ID IS NOT NULL AND e.Eve_Estado = 'Acreditado'";
+             SELECT a.* 
+             FROM Atleta a
+             INNER JOIN Evento e ON a.Atl_ID = e.Atl_ID
+             WHERE e.Com_ID = @com_id AND e.Atl_ID IS NOT NULL AND e.Eve_Estado = 'Acreditado'";
 
                 using (SqlCommand cmd = new SqlCommand(consulta, cnn))
                 {
-                    cmd.Parameters.AddWithValue("@com_id", idCompetencia); 
+                    cmd.Parameters.AddWithValue("@com_id", idCompetencia);
 
                     cnn.Open();
                     using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
@@ -239,6 +237,106 @@ namespace ClaseBase
                 }
             }
             return dataTable;
+        }
+
+
+
+        public static DataTable listarAtletasPorCompetencia(int idCompetencia)
+        {
+            DataTable dataTable = new DataTable();
+            String conexion = DataBaseConfig.DB_CONN;
+            using (SqlConnection cnn = new SqlConnection(conexion))
+            {
+                string consulta = @"
+                    SELECT a.Atl_DNI 'DNI', a.Atl_Apellido 'Apellido', d.Dis_Nombre 'Disciplina', cat.Cat_Nombre 'Categoria', 
+                           e.Eve_HoraInicio 'Hora de Inicio', e.Eve_HoraFin 'Horario de Fin', 
+                           CONVERT(VARCHAR, DATEADD(SECOND, DATEDIFF(SECOND, e.Eve_HoraInicio, e.Eve_HoraFin), 0), 108) AS Prime
+                    FROM Atleta a
+                    INNER JOIN Evento e ON a.Atl_ID = e.Atl_ID
+                    INNER JOIN Competencia c ON e.Com_ID = c.Com_ID
+                    INNER JOIN Categoria cat ON c.Cat_ID = cat.Cat_ID
+                    INNER JOIN Disciplina d ON c.Dis_ID = d.Dis_ID
+                    WHERE e.Com_ID = @com_id AND e.Atl_ID IS NOT NULL AND e.Eve_Estado = 'Acreditado'
+                    ORDER BY Prime";
+
+                using (SqlCommand cmd = new SqlCommand(consulta, cnn))
+                {
+                    cmd.Parameters.AddWithValue("@com_id", idCompetencia);
+
+                    cnn.Open();
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                    {
+                        adapter.Fill(dataTable);
+                    }
+                }
+            }
+            return dataTable;
+        }
+
+        public static int contarTotal(int idCompetencia)
+        {
+            int total = 0;
+            String conexion = DataBaseConfig.DB_CONN;
+            using (SqlConnection cnn = new SqlConnection(conexion))
+            {
+                string consulta = @"
+            SELECT COUNT(*) AS total
+            FROM Evento e
+            WHERE e.Com_ID = @com_id AND e.Atl_ID IS NOT NULL AND e.Eve_Estado <> 'Anulado' AND e.Eve_Estado <> 'Inscripto'";
+
+                using (SqlCommand cmd = new SqlCommand(consulta, cnn))
+                {
+                    cmd.Parameters.AddWithValue("@com_id", idCompetencia);
+
+                    cnn.Open();
+                    total = (int)cmd.ExecuteScalar();
+                }
+            }
+            return total;
+        }
+
+        public static int contarAbandonos(int idCompetencia)
+        {
+            int cantidadAbandonos = 0;
+            String conexion = DataBaseConfig.DB_CONN;
+            using (SqlConnection cnn = new SqlConnection(conexion))
+            {
+                string consulta = @"
+            SELECT COUNT(*) AS cantidadAbandonos
+            FROM Evento e
+            WHERE e.Com_ID = @com_id AND e.Atl_ID IS NOT NULL AND e.Eve_Estado = 'Abandono'";
+
+                using (SqlCommand cmd = new SqlCommand(consulta, cnn))
+                {
+                    cmd.Parameters.AddWithValue("@com_id", idCompetencia);
+
+                    cnn.Open();
+                    cantidadAbandonos = (int)cmd.ExecuteScalar();
+                }
+            }
+            return cantidadAbandonos;
+        }
+
+        public static int contarDescalificados(int idCompetencia)
+        {
+            int cantidadDescalificados = 0;
+            String conexion = DataBaseConfig.DB_CONN;
+            using (SqlConnection cnn = new SqlConnection(conexion))
+            {
+                string consulta = @"
+            SELECT COUNT(*) AS CantidadDescalificados
+            FROM Evento e
+            WHERE e.Com_ID = @com_id AND e.Atl_ID IS NOT NULL AND e.Eve_Estado = 'Descalificado'";
+
+                using (SqlCommand cmd = new SqlCommand(consulta, cnn))
+                {
+                    cmd.Parameters.AddWithValue("@com_id", idCompetencia);
+
+                    cnn.Open();
+                    cantidadDescalificados = (int)cmd.ExecuteScalar();
+                }
+            }
+            return cantidadDescalificados;
         }
 
         public static void ActualizarTiemposEvento(int idAtleta, int idCompetencia, DateTime horaInicio, DateTime horaFin)
